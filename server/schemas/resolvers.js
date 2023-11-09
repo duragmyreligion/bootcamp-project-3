@@ -16,7 +16,7 @@ const resolvers = {
 
       if (name) {
         params.name = {
-          $regex: name
+          $regex: name,
         };
       }
 
@@ -29,7 +29,7 @@ const resolvers = {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'orders.products',
-          populate: 'category'
+          populate: 'category',
         });
 
         user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
@@ -43,7 +43,7 @@ const resolvers = {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'orders.products',
-          populate: 'category'
+          populate: 'category',
         });
 
         return user.orders.id(_id);
@@ -53,19 +53,18 @@ const resolvers = {
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
-      await new Order({ products: args.products });
+      // We map through the list of products sent by the client to extract the _id of each item and create a new Order.
+      await Order.create({ products: args.products.map(({ _id }) => _id) });
       const line_items = [];
 
-      // eslint-disable-next-line no-restricted-syntax
       for (const product of args.products) {
-        // Create a line item for each product
         line_items.push({
           price_data: {
             currency: 'usd',
             product_data: {
               name: product.name,
               description: product.description,
-              images: [`${url}/images/${product.image}`]
+              images: [`${url}/images/${product.image}`],
             },
             unit_amount: product.price * 100,
           },
@@ -95,7 +94,9 @@ const resolvers = {
       if (context.user) {
         const order = new Order({ products });
 
-        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+        await User.findByIdAndUpdate(context.user._id, {
+          $push: { orders: order },
+        });
 
         return order;
       }
@@ -104,7 +105,9 @@ const resolvers = {
     },
     updateUser: async (parent, args, context) => {
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
+        return await User.findByIdAndUpdate(context.user._id, args, {
+          new: true,
+        });
       }
 
       throw AuthenticationError;
@@ -112,7 +115,11 @@ const resolvers = {
     updateProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
 
-      return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+      return await Product.findByIdAndUpdate(
+        _id,
+        { $inc: { quantity: decrement } },
+        { new: true }
+      );
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -130,8 +137,8 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    }
-  }
+    },
+  },
 };
 
 module.exports = resolvers;

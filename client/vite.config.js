@@ -14,9 +14,9 @@ export default defineConfig({
         changeOrigin: true
       }
     }
-  },
+  }, 
   test: {
-    globals: true,
-    environment: 'happy-dom'
+    environment: 'happy-dom',
+    globals: true
   }
 })

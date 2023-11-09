@@ -9,16 +9,12 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
 
-// TODO: Add a comment describing the functionality of loadStripe
-// loads up stripe with a test api key
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
-  // TODO: Add a comment describing the functionality of the useEffect hook in this instance
-  // This triggers the checkout process when relevant data changes
   useEffect(() => {
     if (data) {
       stripePromise.then((res) => {
@@ -27,10 +23,6 @@ const Cart = () => {
     }
   }, [data]);
 
-  // TODO: Add a comment describing what data we are watching and what work should be preformed if that data changes
-  // The useEffect watches changes in the cart's length and the dispatch function. If the cart is empty, it fetches 
-  // cart data from IndexedDB and updates the state with the retrieved data using the ADD_MULTIPLE_TO_CART action. 
-  // This ensures the cart is populated when necessary.
   useEffect(() => {
     async function getCart() {
       const cart = await idbPromise('cart', 'get');
@@ -54,10 +46,6 @@ const Cart = () => {
     return sum.toFixed(2);
   }
 
-  // TODO: Add a comment describing the functionality of our submitCheckout function.
-  // The submitCheckout function initiates the checkout process, passing the cart's 
-  // contents to a GraphQL server. The code also checks if the cart is closed, and if so, 
-  // displays a closed cart icon that, when clicked, opens the cart for further interaction.
   function submitCheckout() {
     getCheckout({
       variables: { 
