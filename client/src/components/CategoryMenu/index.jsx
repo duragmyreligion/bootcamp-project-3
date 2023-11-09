@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { useStoreContext } from '../../utils/GlobalState';
 import {
@@ -54,11 +54,7 @@ function CategoryMenu() {
           {item.name}
         </button>
       ))}
-      <button
-        onClick={() => {
-          handleClick('');
-        }}
-      >
+      <button onClick={() => { handleClick('') }}>
         All
       </button>
     </div>
