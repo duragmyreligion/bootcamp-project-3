@@ -54,7 +54,11 @@ function CategoryMenu() {
           {item.name}
         </button>
       ))}
-      <button onClick={() => { handleClick('') }}>
+      <button
+        onClick={() => {
+          handleClick('');
+        }}
+      >
         All
       </button>
     </div>
