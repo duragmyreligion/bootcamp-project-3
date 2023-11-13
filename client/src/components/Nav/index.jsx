@@ -8,14 +8,14 @@ function Nav() {
       return (
         <ul className="flex-row">
           <li className="mx-1">
-            <Link to="/orderHistory">
+            <Link to="/orderHistory" className="order-history" style={{ textDecoration: 'none'}}>
               Order History
             </Link>
           </li>
-          <li className="mx-1">
+          <li className="mx-1 logout">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
+            <a href="/" className="logout" style={{ textDecoration: 'none'}} onClick={() => Auth.logout()}>
+              Log Out
             </a>
           </li>
         </ul>
@@ -23,14 +23,14 @@ function Nav() {
     } else {
       return (
         <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/signup">
-              Signup
+          <li className="mx-1 login">
+            <Link to="/signup" className="signup" style={{ textDecoration: 'none'}}>
+              Sign Up
             </Link>
           </li>
           <li className="mx-1">
-            <Link to="/login">
-              Login
+            <Link to="/login" className="login" style={{ textDecoration: 'none'}}>
+              Log In
             </Link>
           </li>
         </ul>
@@ -40,10 +40,10 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
+      <img className="logo" src="./images/New_World_Gear_Logo.png"></img>
       <h1>
-        <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          -Shop-Shop
+        <Link to="/" className="logoName" style={{ textDecoration: 'none' }}>
+          New World Gear
         </Link>
       </h1>
 
