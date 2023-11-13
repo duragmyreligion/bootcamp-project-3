@@ -1,7 +1,9 @@
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
+  --primary: #4b949b;
+  --secondary: #000503;
+  --tertiary: #a9316e;
+  --quarternary: #4e4a49;
+  --quinary: #ffaa2f;
   --light: #fafafa;
   --dark: #272f32;
   --error: rgb(228, 46, 1);
@@ -11,6 +13,7 @@
 
 * {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 html,
@@ -21,11 +24,12 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: 'COCOGOOSE', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
-  color: var(--dark);
+  color: var(--quinary);
+  background-color: var(--quarternary);
 }
 
 h1,
@@ -34,7 +38,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'COCOGOOSE', sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -42,6 +46,9 @@ h6 {
 
 h1 {
   font-size: 2.25rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 h2 {
@@ -69,8 +76,12 @@ p {
   margin-top: 0;
 }
 
+ul li {
+  list-style: none;
+}
+
 a {
-  color: var(--tertiary);
+  color: var(--secondary);
   text-decoration: none;
   font-weight: bold;
 }
@@ -80,11 +91,12 @@ a:hover {
 }
 
 header {
-  background: var(--primary);
+  background: var(--secondary);
+  height: 4rem;
 }
 
 header a {
-  color: var(--light);
+  color: var(--tertiary);
 }
 
 button {
@@ -96,7 +108,7 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 
 button:hover {
@@ -201,6 +213,33 @@ input:focus {
 
 .error-text {
   color: var(--error);
+}
+
+.order-history {
+  margin-left: 67rem;
+  font-size: 1.2rem;
+}
+
+.logout {
+  font-size: 1.2rem;
+}
+
+.login {
+  font-size: 1.2rem;
+}
+
+.signup {
+  margin-left: 67rem;
+  font-size: 1.2rem;
+}
+
+.logo {
+  height: 4rem;
+  width: 4.5rem;
+}
+
+.logoName {
+  margin-left: 1rem;
 }
 
 @media screen and (max-width: 768px) {
