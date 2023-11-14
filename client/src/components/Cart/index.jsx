@@ -9,7 +9,7 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
 
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+const stripePromise = loadStripe('pk_test_51OCLhXHu43R31z1b9ZHeM2mrp4xl05c4OxNKDXDcf9WrYMPuE2AcYwFI2QSIkxHzylb68J1vFNKr5hR1IhCBTfhu00WJCn4bX5');
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
@@ -17,8 +17,16 @@ const Cart = () => {
 
   useEffect(() => {
     if (data) {
-      stripePromise.then((res) => {
-        res.redirectToCheckout({ sessionId: data.checkout.session });
+      stripePromise.then((stripe) => {
+        stripe.redirectToCheckout({ sessionId: data.checkout.session })
+          .then((result) => {
+            if (result.error) {
+              console.error(result.error.message);
+            }
+          })
+          .catch((error) => {
+            console.error(error.message);
+          });
       });
     }
   }, [data]);
@@ -51,6 +59,34 @@ const Cart = () => {
       variables: { 
         products: [...state.cart],
       },
+    })
+    .then((result) => {
+      const { loading, error, data } = result;
+  
+      if (loading) {
+        // Handle loading state if needed
+      }
+  
+      if (error) {
+        console.error(error.message);
+        // Handle error state if needed
+      }
+  
+      if (data) {
+        // Process data if needed
+        const stripe =  stripePromise;
+        stripe.redirectToCheckout({ sessionId: data.checkout.session })
+          .then((result) => {
+            if (result.error) {
+              console.error(result.error.message);
+              // Handle error during redirection
+            }
+          })
+          .catch((error) => {
+            console.error(error.message);
+            // Handle other errors during redirection
+          });
+      }
     });
   }
 
