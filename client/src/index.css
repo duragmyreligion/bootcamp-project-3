@@ -215,6 +215,7 @@ input:focus {
   color: var(--error);
 }
 
+/* nav bar */
 .order-history {
   margin-left: 67rem;
   font-size: 1.2rem;
@@ -240,6 +241,32 @@ input:focus {
 
 .logoName {
   margin-left: 1rem;
+}
+
+/* Carousel */
+
+.carouselContainer {
+  width: 100%;
+  display: flex;
+  position: relative;
+  height: 50vh;
+  z-index: 2;
+  
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.5s ease-out;
+}
+
+#carouselExampleControls:hover .carousel-control-prev,
+#carouselExampleControls:hover .carousel-control-next,
+#carouselExampleControls .carousel-control-prev:hover,
+#carouselExampleControls .carousel-control-next:hover {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
