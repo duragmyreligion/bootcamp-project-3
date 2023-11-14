@@ -1,4 +1,6 @@
+// ProductList.jsx
 import { useEffect } from 'react';
+import Carousel from '../Carousel';
 import ProductItem from '../ProductItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
@@ -9,9 +11,7 @@ import spinner from '../../assets/spinner.gif';
 
 function ProductList() {
   const [state, dispatch] = useStoreContext();
-
   const { currentCategory } = state;
-
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   useEffect(() => {
@@ -44,8 +44,8 @@ function ProductList() {
   }
 
   return (
-    <div className="my-2">
-      <h2>Our Mad T-Shirt Designs:</h2>
+    <div className="my-2" style={{ position: 'relative', zIndex: '1' }}>
+
       {state.products.length ? (
         <div className="flex-row">
           {filterProducts().map((product) => (
@@ -62,6 +62,7 @@ function ProductList() {
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
+
       {loading ? <img src={spinner} alt="loading" /> : null}
     </div>
   );
