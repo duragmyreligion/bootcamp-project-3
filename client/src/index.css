@@ -3,8 +3,8 @@
   --secondary: #000503;
   --tertiary: #a9316e;
   --quarternary: #4e4a49;
-  --quinary: #ffaa2f;
-  --light: #fafafa;
+  --quinary: rgb(206, 130, 23);
+  --light: #e2e8ed;
   --dark: #272f32;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
@@ -29,7 +29,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--quinary);
-  background-color: var(--quarternary);
+  background-color: var(--light);
 }
 
 h1,

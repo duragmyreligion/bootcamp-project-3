@@ -32,12 +32,12 @@
 }
 
 .cart-closed {
-  position: fixed;
+  position: absolute;
   top: 2%;
   right: 1%;
   font-size: 2rem;
   cursor: pointer;
-  background-color: var(--primary);
+  background-color: var(--quinary);
   border-radius: 50%;
   padding: .25rem;
   width: 50px;
