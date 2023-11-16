@@ -43,7 +43,7 @@ function Login(props) {
                 Email:
               </label>
               <input
-                className="form-control"
+                className="form-control loginFont"
                 placeholder=""
                 name="email"
                 type="email"
@@ -56,7 +56,7 @@ function Login(props) {
                 Password:
               </label>
               <input
-                className="form-control"
+                className="form-control loginFont"
                 placeholder=""
                 name="password"
                 type="password"
