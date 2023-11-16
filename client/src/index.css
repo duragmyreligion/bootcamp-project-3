@@ -300,6 +300,18 @@ input:focus {
   max-width: 200rem;
 }
 
+/* Pricing Font */
+
+.secondFont {
+  font-family: "Helvetica";
+  font-weight: bolder;
+  font-size: 1.05rem;
+}
+
+.loginFont {
+  font-family: "Helvetica";
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
