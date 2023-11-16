@@ -29,8 +29,8 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--quinary);
-  background-color: var(--light);
-  background-image: url("./assets/Graffiti Background.jpg");
+  background-color: var(--quarternary);
+background-image: url("./assets/Graffiti Background.jpg");
   background-size: 100vw;
 }
 
@@ -94,7 +94,7 @@ a:hover {
 
 header {
   background: var(--secondary);
-  height: 4rem;
+  height: 6rem;
 }
 
 header a {
@@ -211,7 +211,7 @@ input:focus {
 }
 
 .card {
-  margin:0px;
+margin:0px;
   width: 25%;
   text-align: center;
 }
