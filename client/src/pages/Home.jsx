@@ -3,7 +3,6 @@ import ProductList from "../components/ProductList";
 import Cart from "../components/Cart";
 import Carousel from "../components/Carousel"
 
-
 const Home = () => {
   return (
     <>
@@ -15,6 +14,7 @@ const Home = () => {
       <ProductList />
       <Cart />
     </div>
+
     </>
   );
 };
