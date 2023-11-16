@@ -149,7 +149,6 @@ input:focus {
 }
 
 .container {
-  
   display:flex;
   width: 90vw;
   max-width: 1200px;
@@ -251,10 +250,13 @@ input:focus {
 /* Carousel */
 
 .carouselContainer {
-  width: 100%;
-  display: inline;
+  width: 90%;
+  margin: auto;
+  justify-items: center;
+  display: flex;
   position: relative;
-  height: 50vh;
+  height: auto;
+  max-width: 1200px;
   z-index: 2;
   
 }
