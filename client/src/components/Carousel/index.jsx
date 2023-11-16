@@ -12,7 +12,7 @@ const Carousel = () => {
   
 
   return (
-    <div style={{ zIndex: '2' }}>
+    <div>
       <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
           {carouselImages.map((image, index) => (

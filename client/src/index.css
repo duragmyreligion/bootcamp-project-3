@@ -221,17 +221,33 @@ input:focus {
   font-size: 1.2rem;
 }
 
+.order-history:hover {
+  color: #8b295a;
+}
+
 .logout {
   font-size: 1.2rem;
+}
+
+.logout:hover {
+  color: #8b295a;
 }
 
 .login {
   font-size: 1.2rem;
 }
 
+.login:hover {
+  color: #8b295a;
+}
+
 .signup {
   margin-left: 67rem;
   font-size: 1.2rem;
+}
+
+.signup:hover {
+  color: #8b295a;
 }
 
 .logo {
@@ -241,6 +257,10 @@ input:focus {
 
 .logoName {
   margin-left: 1rem;
+}
+
+.logoName:hover {
+  color: #8b295a;
 }
 
 /* Carousel */
@@ -267,6 +287,12 @@ input:focus {
 #carouselExampleControls .carousel-control-next:hover {
   visibility: visible;
   opacity: 1;
+}
+
+/* Sign Up */
+
+.signUp {
+  max-width: 200rem;
 }
 
 @media screen and (max-width: 768px) {
