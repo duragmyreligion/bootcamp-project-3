@@ -314,6 +314,14 @@ input:focus {
   font-family: "Helvetica";
 }
 
+/* Password Error Styling */
+
+.passCheck {
+  font-family: "Helvetica";
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
