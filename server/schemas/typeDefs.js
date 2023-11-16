@@ -11,6 +11,7 @@ const typeDefs = `
     image: String
     quantity: Int
     price: Float
+    sizes: [String]
     category: Category
   }
 
@@ -41,9 +42,12 @@ const typeDefs = `
     _id: ID
     purchaseQuantity: Int
     name: String
+    description: String
     image: String
     price: Float
+    sizes: [String]
     quantity: Int
+    selectedSize: String
   }
 
   type Query {
@@ -59,7 +63,7 @@ const typeDefs = `
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProduct(_id: ID!, quantity: Int!): Product
+    updateProduct(_id: ID!, size: String!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
   }
 `;

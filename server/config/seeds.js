@@ -20,8 +20,9 @@ db.once('open', async () => {
   const products = await Product.insertMany([
     {
       name: 'Self Portrait',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+        'A slef portrait of Cam back in his metal days as his mates used to say he looked',
       image: 'dc12-dg.png',
       category: categories[0]._id,
       price: 45.00,
@@ -29,8 +30,9 @@ db.once('open', async () => {
     },
     {
       name: 'CyberFly',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
+        'If you want to look inside my mind then do so and then maybe leave me alone',
       image: 'd3-dg.png',
       category: categories[0]._id,
       price: 45.00,
@@ -38,24 +40,27 @@ db.once('open', async () => {
     },
     {
       name: 'Surf Up',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[1]._id,
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
+        'Surf the 120 like its 1999',
       image: 'dc2-dg.png',
       price: 45.00,
       quantity: 20
     },
     {
-      name: 'Spliced',
+      name: 'Retro Robot',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[1]._id,
       description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
+        'Our little friend here is trying to reboot the 80s back to a time when number 5 is alive',
       image: 'dc8-dg-v2.png',
       price: 45.00,
       quantity: 50
     },
     {
       name: 'Picaso',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[1]._id,
       description:
         'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
@@ -64,168 +69,187 @@ db.once('open', async () => {
       quantity: 100
     },
     {
-      name: 'Gaslighted',
+      name: 'Snog the frog',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[2]._id,
       description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
+        'Why not just offend everyone you can a give them a taste of the red and green frog',
       image: 'dc6-dg.png',
       price: 45.00,
       quantity: 30
     },
     {
-      name: 'Fins',
+      name: 'Twisting Out',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[2]._id,
       description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
+        'Originally used a a physcadelic drug testing army mule of the CIA in the 1960s, out mate here still hasnt slept and is getting so twisted out hes not sure where he is anymore',
       image: 'dc14-dg.png',
       price: 45.00,
       quantity: 30
     },
     {
-      name: 'Sammy',
+      name: 'Crazed Alien',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[3]._id,
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
+        'After coming down to earth and meeting our leaders, crazed alien thinks it best if he just leaves.',
       image: 'dc15-dg.png',
       price: 45.00,
       quantity: 100
     },
     {
-      name: 'Spinning Top',
+      name: 'Gaslighting',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
+      description: 'Send a special message to all those f$%wits you come across without mutting a single word, great for parties you didnt want to go to',
       image: 'dc4-dg.png',
       price: 45.00,
       quantity: 1000
     },
     {
-      name: 'Set of Plastic Horses',
+      name: 'Kung Fu Chilli Master',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
+        'You must always follow the ways of the master, as such, you must get more chilli in you every day.',
       image: 'dc1-dg.png',
       price: 45.00,
       quantity: 1000
     },
     {
-      name: 'Teddy Bear',
+      name: 'Maddog',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
+        'Maddog has had a tough year and hes ready to stare down and wanna be ganster try hards',
       image: 'dc11-dg.png',
       price: 45.00,
       quantity: 100
     },
     {
-      name: 'Alphabet Blocks',
+      name: 'Fish Matrix',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
+        'Christina says Cam is a fish and it looks like hes still stuck in the matrix with agent swimth',
       image: 'd5-dg.png',
       price: 45.00,
       quantity: 600
     },
     {
-      name: 'Spinning Top',
+      name: 'Pete S',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
+      description: 'Pete is still reliving his days as a rock god of the 90s but his construction job KPIs are holding him firmly back',
       image: 'dc9-dg.png',
       price: 45.00,
       quantity: 1000
     },
     {
-      name: 'Set of Plastic Horses',
+      name: 'Flower Frame',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
+      'This beuatifully crafted masterpeice is simple yet elegent and ready for any occasion',
       image: 'd4-dg-v2.png',
       price: 45.00,
       quantity: 1000
     },
     {
-      name: 'Teddy Bear',
+      name: 'Weed Sponge',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
+      'Young mate here is so rekt he cant see but he will still try and consume everything in sight.',
       image: 'dc4-dg-vr2.png',
       price: 45.00,
       quantity: 100
     },
     {
-      name: 'Alphabet Blocks',
+      name: 'DMT Demon',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
+      'Dont mix bad mushies with DMT or youll end up like the mushroom killer mum or be paid a visit by this demon.',
       image: 'dc10-dg.png',
       price: 45.00,
       quantity: 600
     },
     {
-      name: 'Spinning Top',
+      name: 'Cyberfly single',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
+      description: 'just chilling wondering where the rest of my mind is',
       image: 'd2-dg.png',
       price: 45.00,
       quantity: 1000
     },
     {
-      name: 'Set of Plastic Horses',
+      name: 'Meet You',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
+        'we are just sooooooo please to eat, i mean meet you',
       image: 'dc5-dg.png',
       price: 45.00,
       quantity: 1000
     },
     {
-      name: 'Teddy Bear',
+      name: 'Snog Frog',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
+        'When you want to be offensive but just not that offensive',
       image: 'dc6-dg-vg2.png',
       price: 45.00,
       quantity: 100
     },
     {
-      name: 'Alphabet Blocks',
+      name: 'Hey',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
+        'Cocaine Claude is just really not coming back to us for a while it looks, might stay away for a bit',
       image: 'dc7-dg-vr2.png',
       price: 45.00,
       quantity: 600
     },
     {
-      name: 'Spinning Top',
+      name: 'Weed Sponge Small',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
+      description: 'When you want to inslult your weed stealing mates but in a more subtle way.',
       image: 'dc4-dg-r.png',
       price: 45.00,
       quantity: 1000
     },
     {
-      name: 'Set of Plastic Horses',
+      name: 'Twisting Out faded',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
+        'Old mate is starting to slip out of this deimsion and looks like hes fading away',
       image: 'dc14-dg-v2.png',
       price: 45.00,
       quantity: 1000
     },
     {
-      name: 'Teddy Bear',
+      name: 'Stealth Rabbit',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
+        'Rabbits here... just watching..... wondring whats wrong wity you',
       image: 'd6-dg.png',
       price: 45.00,
       quantity: 100
     },
     {
-      name: 'Alphabet Blocks',
+      name: 'Weed Sponge small red',
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
+        'Look hes still here being a fwit but you know hes not sticking right out',
       image: 'dc4-dg-l.png',
       price: 45.00,
       quantity: 600
@@ -251,6 +275,13 @@ db.once('open', async () => {
     lastName: 'Holt',
     email: 'eholt@testmail.com',
     password: 'password12345'
+  });
+
+  await User.create({
+    firstName: 'Cameron',
+    lastName: 'Swift',
+    email: 'maddog@gmail.com',
+    password: 'password'
   });
 
   console.log('users seeded');

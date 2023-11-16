@@ -15,7 +15,8 @@ const StoreProvider = ({ children }) => {
     cartOpen: false,
     categories: [],
     currentCategory: '',
-  });
+    sizes:[],
+    });
 
   return <Provider value={[state, dispatch]}>{children}</Provider>;
 };

@@ -20,7 +20,7 @@ const resolvers = {
         };
       }
 
-      return await Product.find(params).populate('category');
+      return await Product.find(params).populate('category').select('name description image price quantity sizes');;
     },
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate('category');
@@ -69,6 +69,7 @@ const resolvers = {
             unit_amount: product.price * 100,
           },
           quantity: product.purchaseQuantity,
+          size: product.size,
         });
       }
 

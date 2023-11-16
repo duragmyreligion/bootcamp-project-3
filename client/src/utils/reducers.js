@@ -1,4 +1,5 @@
 import {
+  UPDATE_SIZES,
   UPDATE_PRODUCTS,
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
@@ -12,6 +13,13 @@ import {
 
 export const reducer = (state, action) => {
   switch (action.type) {
+
+    case 'UPDATE_SIZES':
+      return {
+        ...state,
+        sizes: action.payload, // Update sizes in the global state
+      };
+
     case UPDATE_PRODUCTS:
       return {
         ...state,
