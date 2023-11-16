@@ -30,6 +30,8 @@ body {
   font-size: 16px;
   color: var(--quinary);
   background-color: var(--light);
+  background-image: url("./assets/Graffiti Background.jpg");
+  background-size: 100vw;
 }
 
 h1,
@@ -147,7 +149,9 @@ input:focus {
 }
 
 .container {
-  width: 85%;
+  
+  display:flex;
+  width: 90vw;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -207,6 +211,7 @@ input:focus {
 }
 
 .card {
+  margin:0px;
   width: 25%;
   text-align: center;
 }
@@ -247,7 +252,7 @@ input:focus {
 
 .carouselContainer {
   width: 100%;
-  display: flex;
+  display: inline;
   position: relative;
   height: 50vh;
   z-index: 2;
