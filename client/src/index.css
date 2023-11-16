@@ -3,7 +3,7 @@
   --secondary: #000503;
   --tertiary: #a9316e;
   --quarternary: #4e4a49;
-  --quinary: rgb(206, 130, 23);
+  --quinary: #ce8217 ;
   --light: #e2e8ed;
   --dark: #272f32;
   --error: rgb(228, 46, 1);
@@ -29,8 +29,8 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--quinary);
-  background-color: var(--light);
-  background-image: url("./assets/Graffiti Background.jpg");
+  background-color: var(--quarternary);
+background-image: url("./assets/Graffiti Background.jpg");
   background-size: 100vw;
 }
 
@@ -94,7 +94,7 @@ a:hover {
 
 header {
   background: var(--secondary);
-  height: 4rem;
+  height: 6rem;
 }
 
 header a {
@@ -210,9 +210,10 @@ input:focus {
 }
 
 .card {
-  margin:0px;
+margin:0px;
   width: 25%;
   text-align: center;
+  background-color: rgba(183, 201, 226, 0.7);
 }
 
 .error-text {
@@ -270,7 +271,7 @@ input:focus {
 /* Carousel */
 
 .carouselContainer {
-  width: 90%;
+  width: 61.5%;
   margin: auto;
   justify-items: center;
   display: flex;
