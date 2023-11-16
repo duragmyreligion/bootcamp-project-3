@@ -45,7 +45,7 @@ function ProductItem(item) {
           alt={name}
           src={`/images/${image}`}
         />
-        <p>{name}</p>
+        <p className="productText">{name}</p>
       </Link>
       <div>
         <div className="secondFont">{quantity} {pluralize("item", quantity)} in stock</div>
