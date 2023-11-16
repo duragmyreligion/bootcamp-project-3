@@ -22,13 +22,13 @@ function Nav() {
       );
     } else {
       return (
-        <ul className="flex-row">
-          <li className="mx-1 ml-1 mr-4 mt-3 login">
+        <ul className="flex-row mt-2">
+          <li className="mx-1 ml-1 mr-4 mt-4 login">
             <Link to="/signup" className="signup" style={{ textDecoration: 'none'}}>
               Sign Up
             </Link>
           </li>
-          <li className="mx-1 mt-3">
+          <li className="mx-1 mt-4">
             <Link to="/login" className="login" style={{ textDecoration: 'none'}}>
               Log In
             </Link>
@@ -40,8 +40,8 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
-      <img className="logo ml-2" src="./images/nwg_logo.png"></img>
-      <h1 className="mt-2">
+      <img className="logo ml-2 mt-3" src="./images/nwg_logo.png"></img>
+      <h1 className="mt-4">
         <Link to="/" className="logoName" style={{ textDecoration: 'none' }}>
           New World Gear
         </Link>
