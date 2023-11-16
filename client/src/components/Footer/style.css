@@ -4,3 +4,8 @@ footer {
     text-align: center;
     padding: 10px;
   }
+
+.footerFont {
+  font-family: "Helvetica";
+  font-weight: bold;
+}

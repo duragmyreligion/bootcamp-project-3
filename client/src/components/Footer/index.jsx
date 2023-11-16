@@ -4,7 +4,7 @@ import './style.css';
 const Footer = () => {
   return (
     <footer>
-      <p>&copy; 2023 New World Gear. All rights reserved.</p>
+      <p className='footerFont'>&copy; 2023 New World Gear. All rights reserved.</p>
     </footer>
   );
 };
