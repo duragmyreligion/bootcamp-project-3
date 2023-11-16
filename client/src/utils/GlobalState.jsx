@@ -8,7 +8,7 @@ export function useProductReducer(initialState) {
   return useReducer(reducer, initialState)
 }
 
-const StoreProvider = ({ value = [], ...props }) => {
+const StoreProvider = ({ children }) => {
   const [state, dispatch] = useProductReducer({
     products: [],
     cart: [],
@@ -17,7 +17,7 @@ const StoreProvider = ({ value = [], ...props }) => {
     currentCategory: '',
   });
 
-  return <Provider value={[state, dispatch]} {...props} />;
+  return <Provider value={[state, dispatch]}>{children}</Provider>;
 };
 
 const useStoreContext = () => {

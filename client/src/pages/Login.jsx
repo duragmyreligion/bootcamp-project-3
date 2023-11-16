@@ -30,40 +30,53 @@ function Login(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
+    <div className="signUp mt-5 container d-flex align-items-center justify-content-center">
+      <div className="card">
+        <div className="card-body">
+          <Link to="/signup">← Go to Sign Up</Link>
 
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        {error ? (
+          <h2 className="text-center mb-4">Log In To Your Account</h2>
+          {/* Form fields with Bootstrap styling */}
+          <form onSubmit={handleFormSubmit}>
+            <div className="mb-3" style={{ width: '21rem'}}>
+              <label htmlFor="email" className="form-label" style={{ marginRight: '17rem'}}>
+                Email:
+              </label>
+              <input
+                className="form-control loginFont"
+                placeholder=""
+                name="email"
+                type="email"
+                id="email"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="mb-3" style={{ width: '21rem'}}>
+              <label htmlFor="pwd" className="form-label" style={{ marginRight: '14.5rem'}}>
+                Password:
+              </label>
+              <input
+                className="form-control loginFont"
+                placeholder=""
+                name="password"
+                type="password"
+                id="pwd"
+                onChange={handleChange}
+              />
+            </div>
+            {error ? (
           <div>
-            <p className="error-text">The provided credentials are incorrect</p>
+            <p className="error-text" style={{ width: '20rem'}}>The provided credentials are incorrect</p>
           </div>
-        ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+            ) : null}
+            <div className="mb-2 text-center">
+              <button type="submit" className="btn btn-primary mt-2" style={{ marginRight: '3rem'}}>
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
