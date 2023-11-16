@@ -7,3 +7,7 @@ footer {
     bottom: 0;
     width: 100%;
   }
+.footerFont {
+  font-family: "Helvetica";
+  font-weight: bold;
+}
