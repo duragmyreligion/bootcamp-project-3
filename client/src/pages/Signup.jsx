@@ -51,7 +51,7 @@ function Signup() {
                 First Name:
               </label>
               <input
-                className="form-control loginFont"
+                className="form-control"
                 placeholder=""
                 name="firstName"
                 type="text"
@@ -64,7 +64,7 @@ function Signup() {
                 Last Name:
               </label>
               <input
-                className="form-control loginFont"
+                className="form-control"
                 placeholder=""
                 name="lastName"
                 type="text"
@@ -77,7 +77,7 @@ function Signup() {
                 Email:
               </label>
               <input
-                className="form-control loginFont"
+                className="form-control"
                 placeholder=""
                 name="email"
                 type="email"
@@ -90,7 +90,7 @@ function Signup() {
                 Password:
               </label>
               <input
-                className="form-control loginFont"
+                className="form-control"
                 placeholder=""
                 name="password"
                 type="password"
