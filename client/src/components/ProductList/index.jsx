@@ -4,6 +4,7 @@ import Carousel from '../Carousel';
 import ProductItem from '../ProductItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
+import { UPDATE_SIZES } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
@@ -15,12 +16,21 @@ function ProductList() {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   useEffect(() => {
+
     if (data) {
-      dispatch({
-        type: UPDATE_PRODUCTS,
-        products: data.products,
-      });
-      data.products.forEach((product) => {
+      const fetchedProducts = data.products || [];
+      const fetchedSizes = fetchedProducts.reduce((sizes, product) => {
+        // Assuming sizes are available as an array in each product
+        if (product.sizes && Array.isArray(product.sizes)) {
+          sizes.push(...product.sizes);
+        }
+        return sizes;
+      }, []);
+
+      dispatch({ type: UPDATE_SIZES, sizes: [...new Set(fetchedSizes)] }); // Dispatch action to update sizes
+      dispatch({ type: UPDATE_PRODUCTS, products: fetchedProducts }); // Dispatch action to update products
+
+      fetchedProducts.forEach((product) => {
         idbPromise('products', 'put', product);
       });
     } else if (!loading) {
@@ -56,6 +66,7 @@ function ProductList() {
               name={product.name}
               price={product.price}
               quantity={product.quantity}
+              sizes={product.sizes}
             />
           ))}
         </div>

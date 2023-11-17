@@ -5,7 +5,7 @@ const Carousel = () => {
   // Example array of images for the Carousel component
   const carouselImages = [
     '/images/hero1.png',
-    '/images/hero2_with_txt.jpg',
+    '/images/hero2_3.png',
     // 'image3.jpg',
     // Add more images as needed
   ];

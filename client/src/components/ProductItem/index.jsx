@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
@@ -12,17 +13,27 @@ function ProductItem(item) {
     name,
     _id,
     price,
-    quantity
+    quantity,
+    sizes,
   } = item;
 
-  const { cart } = state
+  const { cart } = state;
+  const [selectedSize, setSelectedSize] = useState(''); // State to store selected size
 
   const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+    // Check if a size is selected
+    if (!selectedSize) {
+      console.log('Please select a size');
+      return;
+    }
+
+    const itemInCart = cart.find((cartItem) => cartItem._id === _id && cartItem.selectedSize === selectedSize)
+
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: _id,
+        selectedSize: selectedSize,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       });
       idbPromise('cart', 'put', {
@@ -32,10 +43,14 @@ function ProductItem(item) {
     } else {
       dispatch({
         type: ADD_TO_CART,
-        product: { ...item, purchaseQuantity: 1 }
+        product: { ...item, purchaseQuantity: 1, selectedSize: selectedSize  }
       });
-      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
+      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1, selectedSize: selectedSize  });
     }
+  };
+
+  const handleSizeChange = (e) => {
+    setSelectedSize(e.target.value);
   };
 
   return (
@@ -48,6 +63,20 @@ function ProductItem(item) {
         <p className="productText">{name}</p>
       </Link>
       <div>
+
+<select value={selectedSize} onChange={handleSizeChange}>
+  <option value="">Select size</option>
+  {sizes && sizes.length > 0 ? (
+    sizes.map((size) => (
+      <option key={size} value={size}>
+        {size}
+      </option>
+    ))
+  ) : (
+    <option value="" disabled>Loading sizes...</option>
+  )}
+</select>
+
         <div className="secondFont">{quantity} {pluralize("item", quantity)} in stock</div>
         <span className="secondFont">${price}</span>
       </div>

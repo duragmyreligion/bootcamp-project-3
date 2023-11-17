@@ -12,6 +12,7 @@ export const QUERY_PRODUCTS = gql`
       category {
         _id
       }
+      sizes
     }
   }
 `;

@@ -21,10 +21,11 @@ function Detail() {
   useEffect(() => {
    // Function to create a simplified product object
    const createSimplifiedProduct = (product) => {
-    const { _id, name, price, quantity, image } = product;
+    const { _id, name, description, price, quantity, image } = product;
     return {
       _id,
       name,
+      description,
       price,
       quantity,
       image,
@@ -72,7 +73,7 @@ function Detail() {
     } else {
       dispatch({
         type: ADD_TO_CART,
-        product: { ...currentProduct, purchaseQuantity: 1 },
+        product: { ...currentProduct, purchaseQuantity: 1, selectedSize: selectedSize },
       });
       console.log(`CURRENT: ${currentProduct}`);
       console.log('ADD TO CART');
