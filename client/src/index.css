@@ -9,6 +9,11 @@
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
+  --NWG_Yellow:#ffd167;
+  --NWG_Pink:#ef476f;
+  --NWG_Blue:#168ab1;
+  --NWG_DarkBlue:#053b4c;
+
 }
 
 * {
@@ -30,7 +35,7 @@ body {
   font-size: 16px;
   color: var(--quinary);
   background-color: var(--quarternary);
-background-image: url("./assets/Graffiti Background.jpg");
+  background-image: url("./assets/Graffiti Background.jpg");
   background-size: 100vw;
 }
 
@@ -83,9 +88,10 @@ ul li {
 }
 
 a {
-  color: var(--secondary);
+  color: var(--NWG_DarkBlue);
   text-decoration: none;
   font-weight: bold;
+  float:right;
 }
 
 a:hover {
@@ -94,12 +100,34 @@ a:hover {
 
 header {
   background: var(--secondary);
+  display: flex;
+  justify-content: space-between;
   height: 6rem;
 }
 
 header a {
   color: var(--tertiary);
 }
+
+
+.menu-items{
+  display:flex;
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+.left-content{
+  display:flex;
+  align-items: center;
+}
+
+.right-content{
+  display:flex;
+  align-items: center;
+  margin-right: 8vw;
+}
+
 
 button {
   font-size: 1rem;
@@ -156,6 +184,8 @@ input:focus {
   margin-right: auto;
 }
 
+
+
 .flex-row {
   display: flex;
   flex-wrap: wrap;
@@ -210,10 +240,31 @@ input:focus {
 }
 
 .card {
-margin:0px;
+  margin:0px;
   width: 25%;
   text-align: center;
-  background-color: rgba(183, 201, 226, 0.7);
+  background-color: rgba(183, 201, 226, 0.85);
+}
+
+.item {
+  margin:0px;
+    width: 90%;
+    text-align: center;
+    background-color: rgba(183, 201, 226, .85);
+    
+  }
+
+.item img{
+  height: 70vh;
+  width:auto;
+}
+
+.item h2 {
+color: var(--tertiary);
+}
+
+.item p {
+  color: var(--NWG_DarkBlue);
 }
 
 .error-text {
@@ -221,10 +272,11 @@ margin:0px;
 }
 
 /* nav bar */
-.order-history {
-  margin-left: 67rem;
+/* .order-history {
+  margin-left: auto;
+  position: relative;
   font-size: 1.2rem;
-}
+} */
 
 .order-history:hover {
   color: #8b295a;
@@ -244,11 +296,6 @@ margin:0px;
 
 .login:hover {
   color: #8b295a;
-}
-
-.signup {
-  margin-left: 67rem;
-  font-size: 1.2rem;
 }
 
 .signup:hover {
@@ -309,14 +356,89 @@ margin:0px;
   font-family: "Helvetica";
   font-weight: bolder;
   font-size: 1.05rem;
+  color:var(--NWG_Blue)
 }
 
 .loginFont {
   font-family: "Helvetica";
 }
 
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
   }
+
+  .menu-items{
+    margin-right: 8vw;
+  }
+
+  .login{
+    font-size: 2vw;
+  }
+        
+  .logoName{
+    font-size: 4vw;
+  }
+
+  .item {
+    margin:0px;
+      width: 80%;
+      text-align: center;
+      background-color: rgba(183, 201, 226, .85);
+      
+    }
+  
+  /* .item img{
+    height: 70vh;
+    width:auto;
+  } */
+  
+  .item h2 {
+  color: var(--tertiary);
+  }
+  
+  .item p {
+    color: var(--secondary)
+  }
+}
+
+
+
+@media screen and (max-width: 460px) {
+  .card {
+    width: 100%;
+  }
+
+  .menu-items{
+    margin-right: 8vw;
+  }
+
+  .login{
+    font-size: 20px;
+  }
+        
+  .logoName{
+    display:none;
+}
+.item {
+  margin:0px;
+    width: 90%;
+    text-align: center;
+    background-color: rgba(183, 201, 226, .85);
+    
+  }
+
+/* .item img{
+  height: 70vh;
+  width:auto;
+} */
+
+.item h2 {
+color: var(--tertiary);
+}
+
+.item p {
+  color: var(--NWG_Pink)
+}
 }

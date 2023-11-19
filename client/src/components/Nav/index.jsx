@@ -6,7 +6,7 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="flex-row">
+        <ul className="flex-row menu-items">
           <li className="mt-3 ml-1 mr-3">
             <Link to="/orderHistory" className="order-history" style={{ textDecoration: 'none'}}>
               Order History
@@ -22,7 +22,7 @@ function Nav() {
       );
     } else {
       return (
-        <ul className="flex-row mt-2">
+        <ul className="flex-row menu-items">
           <li className="mx-1 ml-1 mr-4 mt-4 login">
             <Link to="/signup" className="signup" style={{ textDecoration: 'none'}}>
               Sign Up
@@ -40,14 +40,16 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
-      <img className="logo ml-2 mt-3" src="./images/nwg_logo.png"></img>
-      <h1 className="mt-4">
-        <Link to="/" className="logoName" style={{ textDecoration: 'none' }}>
-          New World Gear
-        </Link>
-      </h1>
+      <div className="left-content">    
+        <img className="logo ml-2 mt-3" src="./images/nwg_logo.png"></img>
+        <h1 className="mt-4">
+          <Link to="/" className="logoName" style={{ textDecoration: 'none' }}>
+            New World Gear
+          </Link>
+        </h1>
+      </div>
 
-      <nav>
+      <nav className="right-content">
         {showNavigation()}
       </nav>
     </header>
