@@ -2,8 +2,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  min-width: 30%;
-  max-width: 30%;
+  width:350px;
   max-height: 60%;
   background-color: var(--light);
   overflow: auto;
@@ -63,15 +62,18 @@
 
 @media screen and (max-width: 768px) {
   .cart {
-    position: relative;
+    position: fixed;
     max-width: 100%;
     max-height: auto;
     box-shadow: none;
-    background-color: inherit;
+    background-color: var(--light);
   }
 
   .cart-closed {
-    position: relative;
+    position: fixed;
+    width:10vw;
+    height:auto;
     margin: 0 auto;
   }
 }
+

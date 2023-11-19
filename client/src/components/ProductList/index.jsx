@@ -1,10 +1,10 @@
-// ProductList.jsx
+//ProductList
 import { useEffect } from 'react';
-import Carousel from '../Carousel';
 import ProductItem from '../ProductItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { UPDATE_SIZES } from '../../utils/actions';
+import { ADD_TO_CART } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
@@ -14,6 +14,22 @@ function ProductList() {
   const [state, dispatch] = useStoreContext();
   const { currentCategory } = state;
   const { loading, data } = useQuery(QUERY_PRODUCTS);
+  
+
+  const handleAddToCart = (selectedProduct, selectedSize) => {
+    // Implement the logic to add items to the cart based on selected product and size
+    if (!selectedSize) {
+      alert('Please select a size');
+      return;
+    }
+
+    dispatch({
+      type: ADD_TO_CART,
+      product: { ...selectedProduct, selectedSize, purchaseQuantity: 1 },
+    });
+
+  };
+
 
   useEffect(() => {
 
@@ -67,6 +83,7 @@ function ProductList() {
               price={product.price}
               quantity={product.quantity}
               sizes={product.sizes}
+              onAddToCart={handleAddToCart}
             />
           ))}
         </div>

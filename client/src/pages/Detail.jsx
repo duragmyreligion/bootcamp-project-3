@@ -12,56 +12,32 @@ import {
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
+
 function Detail() {
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
   const [currentProduct, setCurrentProduct] = useState({});
   const { loading, data } = useQuery(QUERY_PRODUCTS);
   const { products, cart } = state;
-  useEffect(() => {
-   // Function to create a simplified product object
-   const createSimplifiedProduct = (product) => {
-    const { _id, name, description, price, quantity, image } = product;
-    return {
-      _id,
-      name,
-      description,
-      price,
-      quantity,
-      image,
-      purchaseQuantity: 1,
-    };
+  const [selectedSize, setSelectedSize] = useState('');
+
+  const handleSizeChange = (e) => {
+    setSelectedSize(e.target.value);
   };
-  // already in global store
-  if (products.length) {
-    setCurrentProduct(createSimplifiedProduct(products.find((product) => product._id === id)));
-  }
-  // retrieved from server
-  else if (data) {
-    dispatch({
-      type: UPDATE_PRODUCTS,
-      products: data.products,
-    });
-    data.products.forEach((product) => {
-      idbPromise('products', 'put', product);
-    });
-  }
-  // get cache from idb
-  else if (!loading) {
-    idbPromise('products', 'get').then((indexedProducts) => {
-      dispatch({
-        type: UPDATE_PRODUCTS,
-        products: indexedProducts,
-      });
-    });
-  }
-  }, [products, data, loading, dispatch, id]);
+
   const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === id);
+    if (!selectedSize) {
+      alert('Please select a size');
+      return;
+    }
+
+    const itemInCart = cart.find((cartItem) => cartItem._id === id && cartItem.selectedSize === selectedSize);
+
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: id,
+        selectedSize: selectedSize, // Add selectedSize to identify the correct item
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
       console.log('UPDATE CART Q');
@@ -80,6 +56,7 @@ function Detail() {
       idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
     }
   };
+
   const removeFromCart = () => {
     dispatch({
       type: REMOVE_FROM_CART,
@@ -87,15 +64,72 @@ function Detail() {
     });
     idbPromise('cart', 'delete', { ...currentProduct });
   };
+
+  useEffect(() => {
+    const createSimplifiedProduct = (product) => {
+      const { _id, name, description, price, quantity, image, sizes } = product;
+      return {
+        _id,
+        name,
+        description,
+        price,
+        quantity,
+        image,
+        sizes,
+        purchaseQuantity: 1,
+      };
+    };
+
+    if (products.length) {
+      const foundProduct = products.find((product) => product._id === id);
+      setCurrentProduct(createSimplifiedProduct(foundProduct));
+    } else if (data) {
+      dispatch({
+        type: UPDATE_PRODUCTS,
+        products: data.products,
+      });
+      data.products.forEach((product) => {
+        idbPromise('products', 'put', product);
+      });
+      const foundProduct = data.products.find((product) => product._id === id);
+      setCurrentProduct(createSimplifiedProduct(foundProduct)); // Set currentProduct after fetching data
+    } else if (!loading) {
+      idbPromise('products', 'get').then((indexedProducts) => {
+        dispatch({
+          type: UPDATE_PRODUCTS,
+          products: indexedProducts,
+        });
+      });
+      const foundProduct = indexedProducts.find((product) => product._id === id);
+      setCurrentProduct(createSimplifiedProduct(foundProduct)); // Set currentProduct from indexedProducts
+    }
+  }, [products, data, loading, dispatch, id]);
+
   return (
+
     <>
       {currentProduct && cart ? (
         <div className="container my-1">
           <Link to="/">← Back to Products</Link>
-          <h2>{currentProduct.name}</h2>
-          <p>{currentProduct.description}</p>
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
+          <div className="item">
+            <h2>{currentProduct.name}</h2>
+            <p>{currentProduct.description}</p>
+            <p>
+              <strong>Price:</strong>${currentProduct.price}{' '}
+            
+            <select value={selectedSize} onChange={handleSizeChange}>
+              <option value="">Select size</option>
+              {currentProduct.sizes && currentProduct.sizes.length > 0 ? (
+              currentProduct.sizes.map((size) => (
+              <option key={size} value={size}>
+              {size}
+              </option>
+              ))
+              ) : (
+              <option value="" disabled>Loading sizes...</option>
+              )}
+            </select>
+
             <button onClick={addToCart}>Add to Cart</button>
             <button
               disabled={!cart.find((p) => p._id === currentProduct._id)}
@@ -108,6 +142,7 @@ function Detail() {
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           />
+          </div>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
