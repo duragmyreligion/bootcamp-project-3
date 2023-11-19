@@ -73,7 +73,7 @@ function ProductList() {
     <div className="my-2" style={{ position: 'relative', zIndex: '1' }}>
 
       {state.products.length ? (
-        <div className="flex-row">
+        <div className="flex-row  mb-7">
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}

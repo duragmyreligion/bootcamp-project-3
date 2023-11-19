@@ -7,6 +7,7 @@ import { ADD_USER } from '../utils/mutations';
 function Signup() {
   // State for form data
   const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
+  const [errorMessage, setErrorMessage] = useState(null); // New state for error message
 
   // Apollo mutation hook
   const [addUser] = useMutation(ADD_USER);
@@ -25,6 +26,16 @@ function Signup() {
       Auth.login(token);
     } catch (e) {
       console.error(e);
+  
+      // Check if the error is due to a duplicate key (email already exists)
+      if (e.message.includes("duplicate key error")) {
+        setErrorMessage("This email is already in use. Please use a different email.");
+      } else if (e.message.includes("User validation failed: password:")) {
+        // Display the specific password-related error message
+        setErrorMessage("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
+      } else {
+        setErrorMessage("An error occurred during signup.");
+      }
     }
   };
 
@@ -44,6 +55,10 @@ function Signup() {
           <Link to="/login">← Go to Login</Link>
 
           <h2 className="text-center mb-4">Create Your Account</h2>
+
+          {/* Display error message if exists */}
+          {errorMessage && <div className="alert alert-danger passCheck">{errorMessage}</div>}
+
           {/* Form fields with Bootstrap styling */}
           <form onSubmit={handleFormSubmit}>
             <div className="mb-3" style={{ width: '21rem'}}>

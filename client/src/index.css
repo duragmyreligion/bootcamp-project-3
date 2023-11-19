@@ -364,6 +364,14 @@ color: var(--tertiary);
 }
 
 
+/* Password Error Styling */
+
+.passCheck {
+  font-family: "Helvetica";
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
