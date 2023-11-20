@@ -8,7 +8,7 @@
 .custom-card-style{
     width: 25%;
     height: 475px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
     background-color: rgba(183, 201, 226, 0.85);
