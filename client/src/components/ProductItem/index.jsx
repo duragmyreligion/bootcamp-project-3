@@ -48,13 +48,13 @@ function ProductItem({ _id, image, name, price, quantity, sizes, onAddToCart }) 
   return (
 
     
-    <div className="card px-1 py-1 test">
+    <div className="card px-1 py-1 productText">
       <Link to={`/products/${_id}`}>
         <img
           alt={name}
           src={`/images/${image}`}
         />
-        <p className="productText">{name}</p>
+        <p className='productText'>{name}</p>
       </Link>
       <div>
       <img className='priceImg' src="/images/price.png" alt="New World Gear"></img>
@@ -79,7 +79,7 @@ function ProductItem({ _id, image, name, price, quantity, sizes, onAddToCart }) 
         <span className="priceFont">${price}</span>
         
       </div>
-      <button className='addCart' onClick={() => onAddToCart({ _id, image, name, price, quantity }, selectedSize)}>
+      <button className='addCart productText' onClick={() => onAddToCart({ _id, image, name, price, quantity }, selectedSize)}>
   Add to cart
 </button>
     </div>

@@ -69,7 +69,7 @@ function Login(props) {
             <p className="error-text" style={{ width: '20rem'}}>The provided credentials are incorrect</p>
           </div>
             ) : null}
-            <div className="mb-2 text-center">
+            <div className="mb-2 text-center submitButton">
               <button type="submit" className="btn btn-primary mt-2" style={{ marginRight: '3rem'}}>
                 Submit
               </button>

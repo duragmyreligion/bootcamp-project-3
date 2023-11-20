@@ -42,9 +42,11 @@ const CartItem = ({ item }) => {
           src={`/images/${item.image}`}
           alt=""
         />
+        <div style={{marginLeft: "5rem", marginTop: "-5rem", fontSize: "16px"}}>{item.name}</div>
+        <div style={{marginLeft: "5rem", fontSize: "16px"}}>${item.price}</div>
+        <div style={{marginLeft: "5rem", fontSize: "16px"}}>{item.selectedSize}</div>
       </div>
       <div>
-        <div>{item.name}, ${item.price}, {item.selectedSize}</div>
         <div>
           <input
             type="number"
