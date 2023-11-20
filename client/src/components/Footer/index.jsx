@@ -50,7 +50,7 @@ const Footer = () => {
                 <ul className="list-group">
                   <li className="mx-auto">
                     <a href="#" className="text-white secondFont" style={{ fontSize: "18px"}}>
-                      Phone: 0408 931 797
+                      Info @ New World Gear
                     </a>
                   </li>
                   <li className="mx-auto">
@@ -79,7 +79,7 @@ const Footer = () => {
           </section>
         </div>
   
-        <div className="text-center text-white p-3 secondFont" style={{ fontSize: "16px", backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+        <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
           © 2023 Copyright: New World Gear
         </div>
       </footer>
