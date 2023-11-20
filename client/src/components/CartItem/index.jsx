@@ -53,7 +53,7 @@ const CartItem = ({ item }) => {
             onChange={onChange}
           />
           <img 
-          src="./images/delete_icon.png" 
+          src="../images/delete_icon.png" 
           onClick={() => removeFromCart(item)}
           style={{width: "6%", marginBottom: "0.4rem"}}
           />

@@ -103,7 +103,7 @@ const Cart = () => {
   return (
     <div className="cart secondFont">
       <div className="close" onClick={toggleCart}>
-        <img src='./images/x_icon.png'/>
+        <img src='../images/x_icon.png'/>
       </div>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
