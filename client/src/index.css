@@ -33,11 +33,34 @@ body {
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
-  color: var(--quinary);
-  background-image: url("./assets/Graffiti_Background.jpg");
-  background-color: rgba(0, 0, 0, 0.8);
+  /* color: var(--quinary);
+  background-color: var(--quarternary); */
+  /* background-image: url("./assets/Graffiti_Background.jpg"); */
   background-size: 100vw;
   overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: -1; 
+}
+
+body::after {
+  content: "";
+  background-image: url("./assets/Graffiti_Background.jpg");
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Place the image behind the overlay */
 }
 
 h1,
@@ -103,7 +126,7 @@ header {
   background: var(--secondary);
   display: flex;
   justify-content: space-between;
-  height: 6rem;
+  height: 7.4rem;
 }
 
 header a {
@@ -242,14 +265,19 @@ input:focus {
   margin:0px;
   width: 25%;
   text-align: center;
-  background-color: rgba(183, 201, 226, 0.85);
+  background-color: rgba(164, 184, 209, 0.8);
+  border: 1px solid rgba(75, 148, 155, 0.2);
+  border-radius: 0%;
 }
 
 .item {
-  margin:0px;
-    width: 90%;
+  margin:0 auto;
+    width: 100%;
     text-align: center;
-    background-color: rgba(183, 201, 226, .85);
+    /* background-color: rgba(183, 201, 226, .85); */
+    background-color: rgba(128, 144, 164, 0.85);
+    border: 1px solid rgba(75, 148, 155, 0.2);
+    border-radius: 1%;
     
   }
 
@@ -311,11 +339,9 @@ color: var(--tertiary);
 }
 
 .logoName {
-  margin-left: 1rem;
-}
-
-.logoName:hover {
-  color: #8b295a;
+  width: 500px;
+  height: auto;
+  margin-left: 12.875rem;
 }
 
 /* Carousel */
@@ -362,8 +388,22 @@ color: var(--tertiary);
 .secondFont {
   font-family: "Helvetica";
   font-weight: bolder;
-  font-size: 1.05rem;
-  color:var(--NWG_Blue)
+  font-size: 1.55rem;
+  color:var(--NWG_Blue);
+}
+
+.priceFont {
+  display: none;
+}
+
+.priceImg {
+  width: 30%;
+  height: auto;
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
 }
 
 .loginFont {
@@ -470,6 +510,7 @@ color: var(--tertiary);
   cursor: pointer;
   display: block;
   margin-left: 1.1rem; /* Adjust as needed */
+  margin-right: 0.5rem;
   margin-top: 0.5rem;
   background: none;
   border: none;
@@ -532,9 +573,9 @@ color: var(--tertiary);
   }
   
   .logoName {
+    width: 12rem;
+    height: 5vh;
     margin-left: 2rem;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
   }
 
   /* Carousel */
@@ -625,16 +666,16 @@ color: var(--tertiary);
     background: var(--secondary);
     display: flex;
     justify-content: space-between;
-    height: 3rem;
+    height: 5rem;
   }
 
-  .left-content{
+  .left-content {
     display:flex;
     align-items: center;
-    height: 3rem;
+    height: 5rem;
   }
   
-  .right-content{
+  .right-content {
     display:flex;
     align-items: center;
     margin-right: 8vw;
@@ -704,6 +745,7 @@ color: var(--tertiary);
   cursor: pointer;
   display: block;
   margin-left: 1.1rem; /* Adjust as needed */
+  margin-right: 0.5rem;
   margin-top: 0.5rem;
   background: none;
   border: none;
@@ -760,15 +802,15 @@ color: var(--tertiary);
   /* Logo */
 
   .logo {
-    height: 2rem;
-    width: 2.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
     margin-top: 0 !important;
   }
   
   .logoName {
+    width: 22rem;
+    height: 5vh;
     margin-left: 2rem;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
   }
 
   /* Carousel */
