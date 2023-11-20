@@ -48,13 +48,13 @@ const Footer = () => {
               <div className="col-lg-6 mx-auto">
                 <h5 className="text-uppercase">Contact Us</h5>
                 <ul className="list-group">
-                  <li class="mx-auto">
-                    <a href="#" className="text-white">
+                  <li className="mx-auto">
+                    <a href="#" className="text-white secondFont" style={{ fontSize: "18px"}}>
                       Phone: 0408 931 797
                     </a>
                   </li>
-                  <li class="mx-auto">
-                    <a href="#" className="text-white">
+                  <li className="mx-auto">
+                    <a href="#" className="text-white secondFont" style={{ fontSize: "18px"}}>
                       Email: cameron@robusthseq.com.au
                     </a>
                   </li>
@@ -79,7 +79,7 @@ const Footer = () => {
           </section>
         </div>
   
-        <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+        <div className="text-center text-white p-3 secondFont" style={{ fontSize: "16px", backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
           © 2023 Copyright: New World Gear
         </div>
       </footer>

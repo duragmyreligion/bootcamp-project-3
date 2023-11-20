@@ -265,7 +265,7 @@ input:focus {
   margin:0px;
   width: 25%;
   text-align: center;
-  background-color: rgba(128, 144, 164, 0.8);
+  background-color: rgba(164, 184, 209, 0.8);
   border: 1px solid rgba(75, 148, 155, 0.2);
   border-radius: 0%;
 }
@@ -510,6 +510,7 @@ color: var(--tertiary);
   cursor: pointer;
   display: block;
   margin-left: 1.1rem; /* Adjust as needed */
+  margin-right: 0.5rem;
   margin-top: 0.5rem;
   background: none;
   border: none;
@@ -572,9 +573,9 @@ color: var(--tertiary);
   }
   
   .logoName {
+    width: 12rem;
+    height: 5vh;
     margin-left: 2rem;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
   }
 
   /* Carousel */
@@ -665,16 +666,16 @@ color: var(--tertiary);
     background: var(--secondary);
     display: flex;
     justify-content: space-between;
-    height: 3rem;
+    height: 5rem;
   }
 
-  .left-content{
+  .left-content {
     display:flex;
     align-items: center;
-    height: 3rem;
+    height: 5rem;
   }
   
-  .right-content{
+  .right-content {
     display:flex;
     align-items: center;
     margin-right: 8vw;
@@ -744,6 +745,7 @@ color: var(--tertiary);
   cursor: pointer;
   display: block;
   margin-left: 1.1rem; /* Adjust as needed */
+  margin-right: 0.5rem;
   margin-top: 0.5rem;
   background: none;
   border: none;
@@ -800,15 +802,15 @@ color: var(--tertiary);
   /* Logo */
 
   .logo {
-    height: 2rem;
-    width: 2.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
     margin-top: 0 !important;
   }
   
   .logoName {
+    width: 22rem;
+    height: 5vh;
     margin-left: 2rem;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
   }
 
   /* Carousel */
