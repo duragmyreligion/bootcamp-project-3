@@ -40,6 +40,10 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -203,7 +207,7 @@ input:focus {
 .container {
   display:flex;
   width: 90vw;
-  max-width: 75rem;
+  max-width: 75.5rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -268,11 +272,6 @@ input:focus {
   background-color: rgba(164, 184, 209, 0.8);
   border: 1px solid rgba(75, 148, 155, 0.2);
   border-radius: 0%;
-}
-
-.flex-column {
-  /* display: flex; */
-  /* flex-direction: column; */
 }
 
 .item {
