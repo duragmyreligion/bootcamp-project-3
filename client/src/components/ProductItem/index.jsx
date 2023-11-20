@@ -57,7 +57,9 @@ function ProductItem({ _id, image, name, price, quantity, sizes, onAddToCart }) 
         <p className="productText">{name}</p>
       </Link>
       <div>
-        <select value={selectedSize} onChange={handleSizeChange}>
+      <img className='priceImg' src="/images/price.png" alt="New World Gear"></img>
+
+        <select className='mb-2 rounded' value={selectedSize} onChange={handleSizeChange}>
           <option value="">Select size</option>
           {sizes && sizes.length > 0 ? (
             sizes.map((size) => (
@@ -74,7 +76,8 @@ function ProductItem({ _id, image, name, price, quantity, sizes, onAddToCart }) 
         {/* <div className="secondFont">
           {quantity} {pluralize('item', quantity)} in stock
         </div> */}
-        <span className="secondFont">${price}</span>
+        <span className="priceFont">${price}</span>
+        
       </div>
       <button className='addCart' onClick={() => onAddToCart({ _id, image, name, price, quantity }, selectedSize)}>
   Add to cart
