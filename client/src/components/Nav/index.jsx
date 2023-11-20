@@ -41,13 +41,14 @@ function Nav() {
   return (
     <header className="flex-row px-1">
       <div className="left-content">    
-        <img className="logo ml-2 mt-3" src="./images/nwg_logo.png"></img>
-        <h1 className="mt-4">
-          <Link to="/" className="logoName" style={{ textDecoration: 'none' }}>
-            New World Gear
-          </Link>
-        </h1>
+        <img className="logo ml-3 mt-2" src="./images/nwg_logo.png"></img>
       </div>
+
+      <div className="mx-auto mt-1">
+          <Link to="/" className="logoName" style={{ textDecoration: 'none' }}>
+            <img src="./images/nwg.png" alt="new world gear"></img>
+          </Link>
+        </div>
 
       <nav className="right-content">
         {showNavigation()}

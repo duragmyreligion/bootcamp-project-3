@@ -102,7 +102,7 @@ header {
   background: var(--secondary);
   display: flex;
   justify-content: space-between;
-  height: 6rem;
+  height: 7.4rem;
 }
 
 header a {
@@ -308,11 +308,9 @@ color: var(--tertiary);
 }
 
 .logoName {
-  margin-left: 1rem;
-}
-
-.logoName:hover {
-  color: #8b295a;
+  width: 500px;
+  height: auto;
+  margin-left: 12.875rem;
 }
 
 /* Carousel */
