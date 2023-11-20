@@ -389,10 +389,21 @@ color: var(--tertiary);
   font-family: "Helvetica";
   font-weight: bolder;
   font-size: 1.55rem;
-  color:var(--NWG_Yellow);
+  color:var(--NWG_Blue);
+}
+
+.priceFont {
+  display: none;
+}
+
+.priceImg {
+  width: 30%;
+  height: auto;
   display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
+  justify-content: center; 
+  align-items: center;  
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
 }
 
 .loginFont {

@@ -39,11 +39,7 @@ const Footer = () => {
           </section> */}
   
           <section className="mb-4">
-            <p>
-            {/* EXPERIENCE */}
             <img src="/images/nwg.png" alt="New World Gear"></img>
-            </p>
-
           </section>
   
           <section className="contact-us">
