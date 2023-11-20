@@ -29,7 +29,7 @@ db.once('open', async () => {
       quantity: 500
     },
     {
-      name: 'CyberFly',
+      name: 'Sliced Halves',
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       description:
         'If you want to look inside my mind then do so and then maybe leave me alone',
@@ -59,7 +59,7 @@ db.once('open', async () => {
       quantity: 50
     },
     {
-      name: 'Picaso',
+      name: 'CyberFly',
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[1]._id,
       description:
@@ -177,7 +177,7 @@ db.once('open', async () => {
       quantity: 600
     },
     {
-      name: 'Cyberfly single',
+      name: 'Spliced',
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description: 'just chilling wondering where the rest of my mind is',
