@@ -64,7 +64,7 @@ const Footer = () => {
             <div className="container text-center">
               {/* Repeat this block for each col-lg-3 col-md-6 mb-4 mb-md-0 section */}
               <div className="col-lg-6 mx-auto">
-                <h5 className="text-uppercase ">Contact Us</h5>
+                <h5 className="text-uppercase">Contact Us</h5>
                 <ul className="list-group">
                   <li class="mx-auto">
                     <a href="#" className="text-white">
@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
   
         <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-          © 2020 Copyright: RobustHSCQ
+          © 2023 Copyright: RobustHSCQ
         </div>
       </footer>
     )
