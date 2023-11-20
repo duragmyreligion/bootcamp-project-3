@@ -71,9 +71,9 @@ function ProductItem({ _id, image, name, price, quantity, sizes, onAddToCart }) 
             </option>
           )}
         </select>
-        <div className="secondFont">
+        {/* <div className="secondFont">
           {quantity} {pluralize('item', quantity)} in stock
-        </div>
+        </div> */}
         <span className="secondFont">${price}</span>
       </div>
       <button className='addCart' onClick={() => onAddToCart({ _id, image, name, price, quantity }, selectedSize)}>

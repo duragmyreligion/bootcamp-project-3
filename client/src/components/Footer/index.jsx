@@ -4,7 +4,7 @@ import './style.css';
 const Footer = () => {
   return (
   
-      <footer className="bg-dark text-center text-white secondFont">
+      <footer className="bg-dark text-center text-white">
         <div className="footer-container p-4">
           <section className="mb-4">
             <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
@@ -27,89 +27,63 @@ const Footer = () => {
             </a>
           </section>
   
-          <section className="">
+          {/* <section className="">
             <form action="">
               <div className="row d-flex justify-content-center">
 
 
                 <div className="col-auto">
-// <<<<<<< durag
-//                   <p className="pt-2">
-//                     Sign up for our newsletter
-//                   </p>
-//                 </div>
-//                 <div className="col-md-5 col-12">
-//                   <div className="form-outline form-white mb-4">
-//                     <input type="email" id="form5Example21" className="form-control" />
-//                     <label className="form-label" htmlFor="form5Example21">
-//                       Email address
-//                     </label>
-//                   </div>
-//                 </div>
-//                 <div className="col-auto">
-//                   <button type="submit" className="btn btn-outline-light mb-4">
-//                     Subscribe
-//                   </button>
-// =======
-// >>>>>>> main
                 </div>
               </div>
             </form>
-          </section>
+          </section> */}
   
           <section className="mb-4">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-              repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-              eum harum corrupti dicta, aliquam sequi voluptate quas.
+            {/* EXPERIENCE */}
+            <img src="/images/nwg.png" alt="New World Gear"></img>
             </p>
+
           </section>
   
-          <section className="">
-            <div className="row">
+          <section className="contact-us">
+            <div className="container text-center">
               {/* Repeat this block for each col-lg-3 col-md-6 mb-4 mb-md-0 section */}
-              <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-                {/* <h5 className="text-uppercase">Links</h5> */}
-                <ul className="list-unstyled mb-0">
-                  <li>
-                    <a href="#!" className="text-white secondFont">
-                      Facebook
+              <div className="col-lg-6 mx-auto">
+                <h5 className="text-uppercase">Contact Us</h5>
+                <ul className="list-group">
+                  <li class="mx-auto">
+                    <a href="#" className="text-white">
+                      Phone: 0408 931 797
                     </a>
                   </li>
-                  <li>
-                    <a href="#!" className="text-white secondFont">
-                      Instagram
+                  <li class="mx-auto">
+                    <a href="#" className="text-white">
+                      Email: cameron@robusthseq.com.au
                     </a>
                   </li>
-                  <li>
-                    <a href="#!" className="text-white secondFont">
+                  {/* <li>
+                    <a href="#!" className="text-white">
                       Privacy Policy
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="text-white secondFont">
+                    <a href="#!" className="text-white">
                       Refund Policy
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="text-white secondFont">
+                    <a href="#!" className="text-white">
                       Terms of Service
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
-              <div className="col-md-5 col-12">
-                <ul class = "list-unstyled">
-                  <li>Email: cameron@robusthseq.com.au</li>
-                  <li>Phone: 0408 931 797</li>
-                  
-                  </ul>
-                </div>
             </div>
           </section>
         </div>
   
-        <div className="text-center p-3 secondFont" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+        <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
           © 2023 Copyright: New World Gear
         </div>
       </footer>

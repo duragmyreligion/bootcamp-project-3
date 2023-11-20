@@ -21,3 +21,11 @@
   font-family: "Helvetica";
   font-weight: bold;
 }
+
+.custom-list-item {
+  background-color: transparent;
+}
+
+.text-uppercase {
+  color: var(--primary);
+}
