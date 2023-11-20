@@ -94,16 +94,16 @@ const Cart = () => {
     return (
       <div className="cart-closed"  onClick={toggleCart}>
         <span role="img" aria-label="trash">
-          <img src="./images/Shopping-Cart-BLUE.png" style={{width: "80%"}}/>
+          <img src="../images/Shopping-Cart-BLUE.png" style={{width: "80%"}}/>
         </span>
       </div>
     );
   }
 
   return (
-    <div className="cart">
+    <div className="cart secondFont">
       <div className="close" onClick={toggleCart}>
-        [close]
+        <img src='./images/x_icon.png'/>
       </div>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
@@ -118,17 +118,14 @@ const Cart = () => {
             {Auth.loggedIn() ? (
               <button onClick={submitCheckout}>Checkout</button>
             ) : (
-              <span>(log in to check out)</span>
+              <a href="/login">(log in to check out)</a>
             )}
           </div>
         </div>
       ) : (
-        <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
-          You haven't added anything to your cart yet!
-        </h3>
+        <h5>
+          No items added to cart.
+        </h5>
       )}
     </div>
   );

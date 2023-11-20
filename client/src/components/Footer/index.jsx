@@ -4,7 +4,7 @@ import './style.css';
 const Footer = () => {
   return (
   
-      <footer className="bg-dark text-center text-white">
+      <footer className="bg-dark text-center text-white secondFont">
         <div className="footer-container p-4">
           <section className="mb-4">
             <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
@@ -33,6 +33,25 @@ const Footer = () => {
 
 
                 <div className="col-auto">
+// <<<<<<< durag
+//                   <p className="pt-2">
+//                     Sign up for our newsletter
+//                   </p>
+//                 </div>
+//                 <div className="col-md-5 col-12">
+//                   <div className="form-outline form-white mb-4">
+//                     <input type="email" id="form5Example21" className="form-control" />
+//                     <label className="form-label" htmlFor="form5Example21">
+//                       Email address
+//                     </label>
+//                   </div>
+//                 </div>
+//                 <div className="col-auto">
+//                   <button type="submit" className="btn btn-outline-light mb-4">
+//                     Subscribe
+//                   </button>
+// =======
+// >>>>>>> main
                 </div>
               </div>
             </form>
@@ -53,27 +72,27 @@ const Footer = () => {
                 {/* <h5 className="text-uppercase">Links</h5> */}
                 <ul className="list-unstyled mb-0">
                   <li>
-                    <a href="#!" className="text-white">
+                    <a href="#!" className="text-white secondFont">
                       Facebook
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="text-white">
+                    <a href="#!" className="text-white secondFont">
                       Instagram
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="text-white">
+                    <a href="#!" className="text-white secondFont">
                       Privacy Policy
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="text-white">
+                    <a href="#!" className="text-white secondFont">
                       Refund Policy
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="text-white">
+                    <a href="#!" className="text-white secondFont">
                       Terms of Service
                     </a>
                   </li>
@@ -90,8 +109,8 @@ const Footer = () => {
           </section>
         </div>
   
-        <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-          © 2020 Copyright: New World Gear  <a className="text-white" href="https://mdbootstrap.com/">Link to something idk</a>
+        <div className="text-center p-3 secondFont" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+          © 2023 Copyright: New World Gear
         </div>
       </footer>
     )

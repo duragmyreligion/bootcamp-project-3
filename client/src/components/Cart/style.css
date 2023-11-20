@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  width:350px;
+  width: 21.875rem;
   max-height: 60%;
   background-color: var(--light);
   overflow: auto;
@@ -15,7 +15,7 @@
 
 .cart h2 {
   font-size: 1.5rem;
-  border-bottom: 1px solid var(--dark);
+  border-bottom: 0.063rem solid var(--dark);
   padding-bottom: .5rem;
   margin: 1rem 0;
 }
@@ -38,11 +38,11 @@
   right: 1%;
   font-size: 2rem;
   cursor: pointer;
-  background-color: black;
+  /* background-color: black; */
   border-radius: 50%;
   padding: .25rem;
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  /* height: 5rem; */
 }
 
 .cart-closed:hover {
@@ -50,30 +50,79 @@
 }
 
 .cart img {
-  width: 70px;
+  width: 4.375rem;
   margin-right: 1rem;
 }
 
 .cart input {
-  width: 50px;
+  width: 3.125rem;
   padding: 0;
   margin: 0 .5rem 1rem 0;
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 576px) {
+
   .cart {
     position: fixed;
-    max-width: 100%;
-    max-height: auto;
-    box-shadow: none;
+    top: 0;
+    right: 0;
+    width: 15rem;
+    max-height: 30%;
     background-color: var(--light);
+    overflow: auto;
+    padding: .5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+    border-bottom-left-radius: .5rem;
+    z-index: 2;
+    
+  }
+  
+  .cart h2 {
+    font-size: 1.5rem;
+    border-bottom: 0.063rem solid var(--dark);
+    padding-bottom: .5rem;
+    margin: 1rem 0;
+  }
+  
+  .cart .close {
+    position: absolute;
+    width: 8%;
+    top: .3rem;
+    left: 13.3rem;
+    cursor: pointer;
+    opacity: 100%;
+  }
+  
+  .cart-closed {
+    position: absolute;
+    top: -0.1rem;
+    right: -0.2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    /* background-color: black; */
+    border-radius: 50%;
+    padding: .25rem;
+    width: 2.65rem;
+    /* height: 5rem; */
+  }
+  
+  .cart-closed:hover {
+    transform: rotate(8deg);
+  }
+  
+  .cart img {
+    width: 4.375rem;
+    margin-right: 1rem;
+  }
+  
+  .cart input {
+    width: 3.125rem;
+    padding: 0;
+    margin: 0 .5rem 1rem 0;
   }
 
-  .cart-closed {
-    position: fixed;
-    width:10vw;
-    height:auto;
-    margin: 0 auto;
-  }
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1024px)  {
+
+}
