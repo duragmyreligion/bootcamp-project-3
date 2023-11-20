@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
-
+import './style.css';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
 function OrderHistory() {
   const { data } = useQuery(QUERY_USER);
   let user;
+  const linkStyle = {
+    color: 'white', // Set your desired color here
+    textDecoration: 'underline', // Remove the default underline
+    
+  };
 
   if (data) {
     user = data.user;
@@ -13,8 +18,8 @@ function OrderHistory() {
 
   return (
     <>
-      <div className="container my-1">
-        <Link to="/">← Back to Products</Link>
+      <div className="order-container my-1">
+        <Link to="/" style={linkStyle} >← Back to Products</Link>
 
         {user ? (
           <>
@@ -26,9 +31,9 @@ function OrderHistory() {
                 <h3>
                   {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
                 </h3>
-                <div className="flex-row">
+                <div className="flex-row m-5">
                   {order.products.map(({ _id, image, name, price }, index) => (
-                    <div key={index} className="card px-1 py-1">
+                    <div key={index} className="custom-card-style ">
                       <Link to={`/products/${_id}`}>
                         <img alt={name} src={`/images/${image}`} />
                         <p>{name}</p>
