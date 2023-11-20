@@ -35,8 +35,9 @@ body {
   font-size: 16px;
   color: var(--quinary);
   background-color: var(--quarternary);
-  background-image: url("./assets/Graffiti Background.jpg");
+  background-image: url("./assets/Graffiti_Background.jpg");
   background-size: 100vw;
+  overflow-x: hidden;
 }
 
 h1,
@@ -47,7 +48,7 @@ h5,
 h6 {
   font-family: 'COCOGOOSE', sans-serif;
   font-weight: 500;
-  margin: 5px 0;
+  margin: 0.313rem 0;
   line-height: 1.25;
 }
 
@@ -137,7 +138,7 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+  margin: 0 0.063rem;
   background-color: var(--primary);
 }
 
@@ -165,26 +166,24 @@ form {
 input {
   font-size: 1rem;
   padding: 0.25rem;
-  border: 1px solid var(--dark);
+  border: 0.063rem solid var(--dark);
   outline: none;
   border-radius: 3px;
   transition: box-shadow 0.2s;
 }
 
 input:focus {
-  border: 1px solid var(--secondary);
+  border: 0.063rem solid var(--secondary);
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 
 .container {
   display:flex;
   width: 90vw;
-  max-width: 1200px;
+  max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
 }
-
-
 
 .flex-row {
   display: flex;
@@ -282,6 +281,10 @@ color: var(--tertiary);
   color: #8b295a;
 }
 
+.hamburger-menu {
+  display: none; /* Hide the default checkbox */
+}
+
 .logout {
   font-size: 1.2rem;
 }
@@ -322,7 +325,7 @@ color: var(--tertiary);
   display: flex;
   position: relative;
   height: auto;
-  max-width: 1200px;
+  max-width: 75rem;
   z-index: 2;
   
 }
@@ -348,6 +351,10 @@ color: var(--tertiary);
   max-width: 200rem;
 }
 
+.signUpBox {
+  width: 24rem;
+}
+
 /* Pricing Font */
 
 .secondFont {
@@ -361,7 +368,6 @@ color: var(--tertiary);
   font-family: "Helvetica";
 }
 
-
 /* Password Error Styling */
 
 .passCheck {
@@ -370,81 +376,477 @@ color: var(--tertiary);
   font-size: 0.9rem;
 }
 
-@media screen and (max-width: 768px) {
-  .card {
-    width: 100%;
+.productLink {
+  position: relative;
+  right: 53.5rem;
+}
+
+
+
+@media only screen and (max-width: 576px) {
+
+  header {
+    background: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
   }
 
-  .menu-items{
+  .left-content{
+    display:flex;
+    align-items: center;
+    height: 3rem;
+  }
+  
+  .right-content{
+    display:flex;
+    align-items: center;
     margin-right: 8vw;
   }
+  
 
-  .login{
-    font-size: 2vw;
+  .menu-items{
+    display:flex;
+    list-style-type: none;
+    margin:0;
+    padding:0;
   }
-        
-  .logoName{
-    font-size: 4vw;
+  
+  .container {
+    display:flex;
+    width: 90vw;
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
   }
+
+  .card {
+    margin:0px;
+    width: 25%;
+    text-align: center;
+    background-color: rgba(183, 201, 226, 0.85);
+  }
+  
+  /* Sign Up, Login, Logout */
+  
+  .signUp {
+      max-width: 200rem;
+  }
+
+  .logout {
+    font-size: 1.2rem;
+  }
+  
+  .login {
+    font-size: 1.2rem;
+  }
+
+  .signUpBox {
+    width: 18rem;
+  }
+
+  .firstNameLabel {
+    margin-right: 11rem !important;
+  }
+
+  .lastNameLabel {
+    margin-right: 11rem !important;
+  }
+
+  .emailLabel {
+    margin-right: 14rem !important;
+  }
+
+  .pwLabel {
+    margin-right: 11.5rem !important;
+  }
+
+  /* Hamburger Menu */
+
+.hamburger-menu {
+  cursor: pointer;
+  display: block;
+  margin-left: 1.1rem; /* Adjust as needed */
+  margin-top: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+.menu-icon {
+  display: block;
+  width: 24px; /* Adjust the size as needed */
+  height: 2px;
+  background-color: #fff; /* Adjust the color as needed */
+  margin-bottom: 6px;
+  outline: none;
+}
+
+.menu-items {
+  display: none;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  background: var(--secondary);
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  z-index: 1000;
+}
+
+.menu-items a {
+  padding: 1rem;
+  color: #fff; /* Adjust the color as needed */
+  text-decoration: none;
+  display: block;
+}
+
+/* Show menu items when the hamburger menu is open */
+.menu-items.mobile-menu-open {
+  display: flex;
+}
+
+/* Additional styles for mobile menu, adjust as needed */
+.menu-items.mobile-menu-open .menu-icon:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-items.mobile-menu-open .menu-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-items.mobile-menu-open .menu-icon:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+  
+  /* Logo */
+
+  .logo {
+    height: 2rem;
+    width: 2.5rem;
+    margin-top: 0 !important;
+  }
+  
+  .logoName {
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Carousel */
+  
+  .carouselContainer {
+    width: 95%;
+    margin: auto;
+    margin-top: 0.5rem;
+    justify-items: center;
+    display: flex;
+    position: relative;
+    height: auto;
+    max-width: 75rem;
+    z-index: 2;
+    
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.5s ease-out;
+  }
+  
+  #carouselExampleControls:hover .carousel-control-prev,
+  #carouselExampleControls:hover .carousel-control-next,
+  #carouselExampleControls .carousel-control-prev:hover,
+  #carouselExampleControls .carousel-control-next:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Font Changes */
+  
+  .secondFont {
+    font-family: "Helvetica";
+    font-weight: bolder;
+    font-size: 1.05rem;
+    color:var(--NWG_Blue)
+  }
+  
+  .loginFont {
+    font-family: "Helvetica";
+  }
+  
+  /* Password Error Styling */
+  
+  .passCheck {
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  /* Shirt styling */
+
+  .card {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Individual item styling */
 
   .item {
     margin:0px;
-      width: 80%;
+      width: 100%;
       text-align: center;
       background-color: rgba(183, 201, 226, .85);
       
     }
   
-  /* .item img{
-    height: 70vh;
-    width:auto;
-  } */
-  
-  .item h2 {
-  color: var(--tertiary);
-  }
-  
-  .item p {
-    color: var(--secondary)
-  }
-}
-
-
-
-@media screen and (max-width: 460px) {
-  .card {
+  .item img{
+    height: 40vh;
     width: 100%;
   }
 
-  .menu-items{
+  .productLink {
+    position: relative;
+    right: 9rem;
+    font-size: 15px;
+  }
+  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)  {
+
+  header {
+    background: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+  }
+
+  .left-content{
+    display:flex;
+    align-items: center;
+    height: 3rem;
+  }
+  
+  .right-content{
+    display:flex;
+    align-items: center;
     margin-right: 8vw;
   }
+  
 
-  .login{
-    font-size: 20px;
+  .menu-items{
+    display:flex;
+    list-style-type: none;
+    margin:0;
+    padding:0;
   }
-        
-  .logoName{
-    display:none;
-}
-.item {
-  margin:0px;
-    width: 90%;
+  
+  .container {
+    display:flex;
+    width: 90vw;
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+  }
+
+  .card {
+    margin:0px;
+    width: 25%;
     text-align: center;
-    background-color: rgba(183, 201, 226, .85);
+    background-color: rgba(183, 201, 226, 0.85);
+  }
+  
+  /* Sign Up, Login, Logout */
+  
+  .signUp {
+      max-width: 200rem;
+  }
+
+  .logout {
+    font-size: 1.2rem;
+  }
+  
+  .login {
+    font-size: 1.2rem;
+  }
+
+  .signUpBox {
+    width: 18rem;
+  }
+
+  .firstNameLabel {
+    margin-right: 11rem !important;
+  }
+
+  .lastNameLabel {
+    margin-right: 11rem !important;
+  }
+
+  .emailLabel {
+    margin-right: 14rem !important;
+  }
+
+  .pwLabel {
+    margin-right: 11.5rem !important;
+  }
+
+  /* Hamburger Menu */
+
+.hamburger-menu {
+  cursor: pointer;
+  display: block;
+  margin-left: 1.1rem; /* Adjust as needed */
+  margin-top: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+.menu-icon {
+  display: block;
+  width: 24px; /* Adjust the size as needed */
+  height: 2px;
+  background-color: #fff; /* Adjust the color as needed */
+  margin-bottom: 6px;
+  outline: none;
+}
+
+.menu-items {
+  display: none;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  background: var(--secondary);
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  z-index: 1000;
+}
+
+.menu-items a {
+  padding: 1rem;
+  color: #fff; /* Adjust the color as needed */
+  text-decoration: none;
+  display: block;
+}
+
+/* Show menu items when the hamburger menu is open */
+.menu-items.mobile-menu-open {
+  display: flex;
+}
+
+/* Additional styles for mobile menu, adjust as needed */
+.menu-items.mobile-menu-open .menu-icon:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-items.mobile-menu-open .menu-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-items.mobile-menu-open .menu-icon:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+  
+  /* Logo */
+
+  .logo {
+    height: 2rem;
+    width: 2.5rem;
+    margin-top: 0 !important;
+  }
+  
+  .logoName {
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Carousel */
+  
+  .carouselContainer {
+    width: 95%;
+    margin: auto;
+    margin-top: 0.5rem;
+    justify-items: center;
+    display: flex;
+    position: relative;
+    height: auto;
+    max-width: 75rem;
+    z-index: 2;
     
   }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.5s ease-out;
+  }
+  
+  #carouselExampleControls:hover .carousel-control-prev,
+  #carouselExampleControls:hover .carousel-control-next,
+  #carouselExampleControls .carousel-control-prev:hover,
+  #carouselExampleControls .carousel-control-next:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Font Changes */
+  
+  .secondFont {
+    font-family: "Helvetica";
+    font-weight: bolder;
+    font-size: 1.05rem;
+    color:var(--NWG_Blue)
+  }
+  
+  .loginFont {
+    font-family: "Helvetica";
+  }
+  
+  /* Password Error Styling */
+  
+  .passCheck {
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  /* Shirt styling */
 
-/* .item img{
-  height: 70vh;
-  width:auto;
-} */
+  .card {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
 
-.item h2 {
-color: var(--tertiary);
-}
+  /* Individual item styling */
 
-.item p {
-  color: var(--NWG_Pink)
-}
+  .item {
+    margin:0px;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(183, 201, 226, .85);
+      
+    }
+  
+  .item img{
+    height: 40vh;
+    width: 100%;
+  }
+
+  .productLink {
+    position: relative;
+    right: 9rem;
+    font-size: 15px;
+  }
+
 }

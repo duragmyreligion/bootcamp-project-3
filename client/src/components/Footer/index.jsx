@@ -79,13 +79,12 @@ const Footer = () => {
                   </li> */}
                 </ul>
               </div>
-              
             </div>
           </section>
         </div>
   
         <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-          © 2023 Copyright: RobustHSCQ
+          © 2023 Copyright: New World Gear
         </div>
       </footer>
     )
