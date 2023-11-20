@@ -33,8 +33,8 @@ const Footer = () => {
 
 
                 <div className="col-auto">
-// <<<<<<< durag
-//                   <p className="pt-2">
+
+{/* //                   <p className="pt-2">
 //                     Sign up for our newsletter
 //                   </p>
 //                 </div>
@@ -49,9 +49,8 @@ const Footer = () => {
 //                 <div className="col-auto">
 //                   <button type="submit" className="btn btn-outline-light mb-4">
 //                     Subscribe
-//                   </button>
-// =======
-// >>>>>>> main
+//                   </button> */}
+
                 </div>
               </div>
             </form>
