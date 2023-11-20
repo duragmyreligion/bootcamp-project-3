@@ -63,7 +63,7 @@ db.once('open', async () => {
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[1]._id,
       description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
+        'Mechanically traversing the realms where everything and everyone is manufractured',
       image: 'd1-dg-v2.png',
       price: 45.00,
       quantity: 100
