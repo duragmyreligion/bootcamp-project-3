@@ -35,11 +35,11 @@ function Login(props) {
         <div className="card-body">
           <Link to="/signup">← Go to Sign Up</Link>
 
-          <h2 className="text-center mb-4">Log In To Your Account</h2>
+          <h2 className="text-center mb-4 mt-5">Log In To Your Account</h2>
           {/* Form fields with Bootstrap styling */}
           <form onSubmit={handleFormSubmit}>
-            <div className="mb-3" style={{ width: '21rem'}}>
-              <label htmlFor="email" className="form-label" style={{ marginRight: '17rem'}}>
+            <div className="mb-3 signUpBox">
+              <label htmlFor="email" className="form-label emailLabel" style={{ marginRight: '19.5rem'}}>
                 Email:
               </label>
               <input
@@ -51,8 +51,8 @@ function Login(props) {
                 onChange={handleChange}
               />
             </div>
-            <div className="mb-3" style={{ width: '21rem'}}>
-              <label htmlFor="pwd" className="form-label" style={{ marginRight: '14.5rem'}}>
+            <div className="mb-3 signUpBox">
+              <label htmlFor="pwd" className="form-label pwLabel" style={{ marginRight: '17rem'}}>
                 Password:
               </label>
               <input

@@ -54,15 +54,15 @@ function Signup() {
         <div className="card-body">
           <Link to="/login">← Go to Login</Link>
 
-          <h2 className="text-center mb-4">Create Your Account</h2>
+          <h2 className="text-center mb-4 mt-4">Create Your Account</h2>
 
           {/* Display error message if exists */}
           {errorMessage && <div className="alert alert-danger passCheck">{errorMessage}</div>}
 
           {/* Form fields with Bootstrap styling */}
           <form onSubmit={handleFormSubmit}>
-            <div className="mb-3" style={{ width: '21rem'}}>
-              <label htmlFor="firstName" className="form-label" style={{ marginRight: '14rem'}}>
+            <div className="mb-3 signUpBox">
+              <label htmlFor="firstName" className="form-label firstNameLabel" style={{ marginRight: '17rem'}}>
                 First Name:
               </label>
               <input
@@ -74,8 +74,8 @@ function Signup() {
                 onChange={handleChange}
               />
             </div>
-            <div className="mb-3" style={{ width: '21rem'}}>
-              <label htmlFor="lastName" className="form-label" style={{ marginRight: '14rem'}}>
+            <div className="mb-3 signUpBox">
+              <label htmlFor="lastName" className="form-label lastNameLabel" style={{ marginRight: '17rem'}}>
                 Last Name:
               </label>
               <input
@@ -87,8 +87,8 @@ function Signup() {
                 onChange={handleChange}
               />
             </div>
-            <div className="mb-3" style={{ width: '21rem'}}>
-              <label htmlFor="email" className="form-label" style={{ marginRight: '17rem'}}>
+            <div className="mb-3 signUpBox">
+              <label htmlFor="email" className="form-label emailLabel" style={{ marginRight: '19.5rem'}}>
                 Email:
               </label>
               <input
@@ -100,8 +100,8 @@ function Signup() {
                 onChange={handleChange}
               />
             </div>
-            <div className="mb-3" style={{ width: '21rem'}}>
-              <label htmlFor="pwd" className="form-label" style={{ marginRight: '14.5rem'}}>
+            <div className="mb-3 signUpBox">
+              <label htmlFor="pwd" className="form-label pwLabel" style={{ marginRight: '17rem'}}>
                 Password:
               </label>
               <input

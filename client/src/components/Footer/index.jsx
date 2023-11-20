@@ -4,7 +4,7 @@ import './style.css';
 const Footer = () => {
   return (
   
-      <footer className="bg-dark text-center text-white">
+      <footer className="bg-dark text-center text-white secondFont">
         <div className="footer-container p-4">
           <section className="mb-4">
             <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
@@ -32,7 +32,7 @@ const Footer = () => {
               <div className="row d-flex justify-content-center">
                 <div className="col-auto">
                   <p className="pt-2">
-                    <strong>Sign up for our newsletter</strong>
+                    Sign up for our newsletter
                   </p>
                 </div>
                 <div className="col-md-5 col-12">
@@ -67,22 +67,22 @@ const Footer = () => {
                 <h5 className="text-uppercase">Links</h5>
                 <ul className="list-unstyled mb-0">
                   <li>
-                    <a href="#!" className="text-white">
+                    <a href="#!" className="text-white secondFont">
                       Link 1
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="text-white">
+                    <a href="#!" className="text-white secondFont">
                       Link 2
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="text-white">
+                    <a href="#!" className="text-white secondFont">
                       Link 3
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="text-white">
+                    <a href="#!" className="text-white secondFont">
                       Link 4
                     </a>
                   </li>
@@ -92,8 +92,8 @@ const Footer = () => {
           </section>
         </div>
   
-        <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-          © 2020 Copyright: <a className="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        <div className="text-center p-3 secondFont" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+          © 2023 Copyright: New World Gear
         </div>
       </footer>
     )
