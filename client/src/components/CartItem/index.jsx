@@ -1,6 +1,8 @@
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+import './style.css';
+
 const CartItem = ({ item }) => {
   const [, dispatch] = useStoreContext();
   const removeFromCart = item => {
@@ -34,9 +36,11 @@ const CartItem = ({ item }) => {
           src={`/images/${item.image}`}
           alt=""
         />
+        <div className="cartFont">
         <div style={{marginLeft: "8rem", marginTop: "-7rem", fontSize: "1.2rem"}}>{item.name}</div>
         <div style={{marginLeft: "8rem", fontSize: "1rem"}}>${item.price}</div>
         <div style={{marginLeft: "8rem", fontSize: "1rem"}}>{item.selectedSize}</div>
+        </div>
       </div>
       <div>
         <div>
@@ -48,6 +52,7 @@ const CartItem = ({ item }) => {
             style={{marginLeft:"8rem"}}
           />
           <img
+          className="delBtn"
           src="../images/delete_icon.png"
           onClick={() => removeFromCart(item)}
           style={{width: "6%", marginBottom: "0.2rem"}}
