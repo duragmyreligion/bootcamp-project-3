@@ -433,10 +433,6 @@ color: var(--tertiary);
   right: 53.5rem;
 }
 
-
-
-
-
 /* galaxy fold */
 
 @media only screen and (min-width: 280px) and (max-width: 653px)  {
@@ -795,7 +791,7 @@ color: var(--tertiary);
 
 /* Tablets */
 
-@media only screen and (min-width: 768px) and (max-width: 1024px)  {
+@media only screen and (min-width: 768px) and (max-width: 1025px)  {
 
   header {
     background: var(--secondary);
@@ -822,6 +818,12 @@ color: var(--tertiary);
     margin:0;
     padding:0;
   }
+
+  .menu-items.mobile-menu-open {
+    display: flex;
+    top: 5rem;
+  }
+
   
   .container {
     display:flex;
@@ -1025,187 +1027,147 @@ color: var(--tertiary);
 
 }
 
-@media only screen and (min-width: 1025px) and (max-width: 1400px) {
+/* Surface Pro 7 */
+
+@media only screen and (min-width: 912px) and (max-width: 1368px) {
 
   header {
     background: var(--secondary);
     display: flex;
     justify-content: space-between;
-    height: 5rem;
+    height: 7rem;
   }
 
-  .left-content {
-    display:flex;
-    align-items: center;
-    height: 5rem;
-  }
-  
-  .right-content {
-    display:flex;
-    align-items: center;
-    margin-right: 8vw;
-  }
-  
-
-  .menu-items{
-    display:flex;
-    list-style-type: none;
-    margin:0;
-    padding:0;
-  }
-  
-  .container {
-    display:flex;
-    width: 90vw;
-    max-width: 75rem;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-x: hidden;
+  .logoName {
+    width: 30rem;
   }
 
-  .card {
-    margin:0px;
-    width: 25%;
-    text-align: center;
-    background-color: rgba(183, 201, 226, 0.85);
-  }
-  
-  /* Sign Up, Login, Logout */
-  
-  .signUp {
-    width: 60% !important;
+  .logo {
+    width: 5rem;
+    height: auto;
+    margin-top: 2rem !important;
   }
 
-  .logout {
-  font-size: 1.2rem;
-  }
-
-  .login {
-  font-size: 1.2rem;
+    /* Sign Up, Login, Logout */
+  
+    .signUp {
+      max-width: 60% !important;
   }
 
   .signUpBox {
-  width: 30rem;
-  margin-left: 2rem;
+    width: 200% !important;
+    margin-left: 3rem !important;
   }
 
   .firstNameLabel {
-    margin-right: 22rem !important;
+    width: 30% !important;
   }
 
   .lastNameLabel {
-    margin-right: 22.5rem !important;
+    width: 30% !important;
   }
 
   .emailLabel {
-    margin-right: 25rem !important;
+    width: 19% !important;
   }
 
   .pwLabel {
-    margin-right: 22.5rem !important;
+    width: 28% !important;
   }
 
   .submitButton {
-    margin-left: -1rem;
-  }
-  
-  /* Logo */
-
-  .logo {
-    height: 3.5rem;
-    width: 3.5rem;
-    margin-top: 0 !important;
-  }
-  
-  .logoName {
-    width: 22rem;
-    height: 5vh;
-    margin-left: 2rem;
+    margin-left: 4.5rem !important;
   }
 
-  /* Carousel */
+
+}
+
+/* iPad Pro */
+
+@media only screen and (min-width: 912px) and (max-width: 1368px) {
+
+    /* Sign Up, Login, Logout */
   
-  .carouselContainer {
-    width: 95%;
-    margin: auto;
-    margin-top: 0.5rem;
-    justify-items: center;
-    display: flex;
-    position: relative;
-    height: auto;
-    max-width: 75rem;
-    z-index: 2;
+  .signUp {
+    max-width: 60% !important;
+  }
+
+  .signUpBox {
+    width: 185% !important;
+    margin-left: 4.5rem !important;
+  }
+
+  .firstNameLabel {
+    width: 30% !important;
+  }
+
+  .lastNameLabel {
+    width: 30% !important;
+  }
+
+  .emailLabel {
+    width: 20% !important;
+  }
+
+  .pwLabel {
+    width: 28% !important;
+  }
+
+  .submitButton {
+    margin-left: 4rem;
+  }
+
+}
+
+
+@media only screen and (min-width: 1027px) and (max-width: 1500px) {
+
+      .mx-auto {
+        margin-right: 0 !important;
+      }
+
+      .logoName {
+        position: absolute;
+        right: 15rem;
+        margin-left: 0rem;
+      }
+
+      .right-content {
+        margin-right: 1rem;
+      }
+
+      .card {
+        width: 60% !important;
+      }
+
+      /* Sign Up, Login, Logout */
+  
+      .signUp {
+        max-width: 200% !important;
+      }
     
-  }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0.3s, opacity 0.5s ease-out;
-  }
-  
-  #carouselExampleControls:hover .carousel-control-prev,
-  #carouselExampleControls:hover .carousel-control-next,
-  #carouselExampleControls .carousel-control-prev:hover,
-  #carouselExampleControls .carousel-control-next:hover {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  /* Font Changes */
-  
-  .secondFont {
-    font-family: "Helvetica";
-    font-weight: bolder;
-    font-size: 1.05rem;
-    color:var(--NWG_Blue)
-  }
-  
-  .loginFont {
-    font-family: "Helvetica";
-  }
-  
-  /* Password Error Styling */
-  
-  .passCheck {
-    font-family: "Helvetica";
-    font-weight: bold;
-    font-size: 0.9rem;
-  }
-  
-  /* Shirt styling */
-
-  .card {
-    width: 100% !important;
-    display: flex !important;
-    flex-wrap: nowrap !important;
-  }
-
-  /* Individual item styling */
-
-  .item {
-    margin:0px;
-      width: 100%;
-      text-align: center;
-      background-color: rgba(183, 201, 226, .85);
-      
-    }
-  
-  .item img{
-    height: 40vh;
-    width: 100%;
-  }
-
-  .productLink {
-    position: relative;
-    right: 9rem;
-    font-size: 15px;
-  }
-
-  .productText {
-    font-size: 24px;
-  }
-
-
+      .signUpBox {
+        width: 185% !important;
+        margin-left: 4.5rem !important;
+      }
+    
+      .firstNameLabel {
+        width: 30% !important;
+      }
+    
+      .lastNameLabel {
+        width: 30% !important;
+      }
+    
+      .emailLabel {
+        width: 20% !important;
+      }
+    
+      .pwLabel {
+        width: 28% !important;
+      }
+    
+      .submitButton {
+        margin-left: 4rem;
+      }
 }
