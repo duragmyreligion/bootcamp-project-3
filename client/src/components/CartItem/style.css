@@ -1,0 +1,103 @@
+/* galaxy fold */
+@media only screen and (min-width: 280px) and (max-width: 653px) {
+    .cartFont {
+        position: relative;
+        margin-left: -3rem;
+        top: 1.75rem;
+    }
+    .cart input {
+        margin-top: 1.9rem;
+        display: flex;
+        position: relative;
+        right: 27%;
+        font-size: 0.8rem;
+    }
+    .cart .delBtn {
+        float: right;
+        margin-top: -2.2rem;
+        margin-right: 2.5rem;
+        padding: 0;
+        height: 0.85rem;
+        width: auto !important;
+    }
+  }
+
+
+  /* iPhone 12 Pro and iphone x */
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+    .cart img{
+      width: 6rem;
+    }
+    .cartFont {
+        position: relative;
+        margin-left: -1rem;
+        top: 1.75rem;
+    }
+    .cart input {
+        margin-top: 0.3rem;
+        display: flex;
+        position: relative;
+        left: 1.5rem;
+        font-size: 0.8rem;
+    }
+    .cart .delBtn {
+        margin-left: 14rem ;
+        margin-top: -2.1rem;
+    }
+  }
+
+  /* ipad mini + ipad */
+@media only screen and (min-width: 768px) and (max-width: 1024px)  {
+    .cartFont {
+        position: relative;
+        margin-left: 2rem;
+        top: -0.8rem;
+        max-height: 9rem;
+        max-width: 5rem;
+        
+    }
+    .cart input {
+        float: right !important;
+        margin-right: 5rem;
+        margin-top: -2.5rem;
+        font-size: 1rem;
+    }
+    .cart .delBtn {
+        margin-left: 16rem;
+        margin-top: -5.2rem;
+    }
+    .cart img {
+        width: 9rem;
+    }
+}
+
+/* ipad air */
+@media only screen and (min-width: 820px) and (max-width: 1180px) {
+    .cart input {
+        margin-right: 3rem;
+    }
+    .cart .delBtn {
+        margin-left: 16.5rem;
+    }
+}
+
+/* nest hub max */
+@media only screen and (min-width: 1025px) and (max-width: 1400px) {
+    .cartFont {
+        position: relative;
+        margin-left: 5rem;
+        top: 0rem;
+        max-height: 9rem;
+        max-width: 5rem;
+    }
+    .cart input {
+        float: right !important;
+        margin-right: 4.2rem;
+        margin-top: -1.5rem;
+        margin-bottom: 0;
+    }
+    .cart .delBtn {
+        margin-left: 19.5rem;
+        margin-top: -3.2rem;
+    }
+}

@@ -62,6 +62,35 @@
   margin: 0 .5rem 0 1.5rem;
 }
 
+/* galaxy fold */
+@media only screen and (min-width: 280px) and (max-width: 653px) {
+  .cart {
+    max-width: 11.5rem;
+    max-height: 60% !important;
+  }
+}
+
+/* Samsung Galaxy S8+ */
+@media only screen and (min-width: 360px) and (max-width: 740px) {
+  .cart {
+    max-width: 16rem;
+  }
+}
+
+/* iPhone 12 Pro and iphone x */
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+  .cart {
+    max-width: 16rem;
+  }
+}
+
+/* iPhone 14 Pro Max */
+@media only screen and (min-width: 430px) and (max-width: 932px) {
+  .cart {
+    width: 20rem !important;
+  }
+}
+
 @media only screen and (max-width: 576px) {
 
   .cart {
@@ -188,14 +217,15 @@
 
 }
 
+/* ipad mini */
 @media only screen and (min-width: 768px) and (max-width: 1024px)  {
   
   .cart {
     position: fixed;
     top: 0;
     right: 0;
-    width: 15rem;
-    max-height: 30%;
+    max-width: 20rem !important;
+    max-height: 60%;
     background-color: var(--light);
     overflow: auto;
     padding: .5rem;
@@ -206,7 +236,7 @@
   }
   
   .cart h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     border-bottom: 0.063rem solid var(--dark);
     padding-bottom: .5rem;
     margin: 1rem 0;
@@ -239,7 +269,7 @@
   }
   
   .cart img {
-    width: 4.375rem;
+    width: 9.375rem;
     margin-right: 1rem;
   }
   
@@ -249,6 +279,13 @@
     margin: 0 .5rem 1rem 0;
   }
 
+}
+
+/* ipad air */
+@media only screen and (min-width: 820px) and (max-width: 1180px) {
+  .cart::-webkit-scrollbar{
+    display: none !important;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1400px) {
@@ -312,3 +349,14 @@
   }
 }
 
+/* nest hub max */
+@media only screen and (min-width: 1025px) and (max-width: 1400px) {
+  .cart {
+    width: 30%;
+    max-height: 60%;
+  }
+  .cart img {
+    width: 8.475rem;
+    margin-right: 2rem;
+  }
+}

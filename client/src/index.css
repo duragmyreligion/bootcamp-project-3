@@ -532,6 +532,10 @@ color: var(--tertiary);
   outline: none;
 }
 
+.hamburger-menu::after{
+  text-decoration: dashed;
+}
+
 .menu-icon {
   display: block;
   width: 24px; /* Adjust the size as needed */
