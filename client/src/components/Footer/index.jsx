@@ -6,7 +6,7 @@ const Footer = () => {
   
       <footer className="bg-dark text-center text-white">
         <div className="footer-container p-4">
-          <section className="mb-4">
+          {/* <section className="mb-4">
             <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button">
               <i className="fab fa-facebook-f"></i>
             </a>
@@ -26,7 +26,7 @@ const Footer = () => {
               <i className="fab fa-github"></i>
             </a>
           </section>
-  
+   */}
           {/* <section className="">
             <form action="">
               <div className="row d-flex justify-content-center">
@@ -50,6 +50,12 @@ const Footer = () => {
                 <ul className="list-group">
                   <li className="mx-auto">
                     <a href="#" className="text-white secondFont" style={{ fontSize: "18px"}}>
+                      info@newworldgear.com
+                    </a>
+                  </li>
+                  <li className="mx-auto">
+                    <a href="#" className="text-white secondFont" style={{ fontSize: "18px"}}>
+                      Email: cameron@robusthseq.com.au
                       Email: info@NewWorldGear.com
                     </a>
                   </li>

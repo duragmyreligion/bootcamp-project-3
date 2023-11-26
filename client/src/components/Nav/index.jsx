@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import Auth from "../../utils/auth";
-import { Link } from "react-router-dom";
+import Auth from '../../utils/auth';
+import { Link } from 'react-router-dom';
 
 function Nav() {
-
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Function to toggle the mobile menu
   function toggleMobileMenu() {
     setMobileMenuOpen(!isMobileMenuOpen);
   }
 
+  // Function to close the mobile menu
   function closeMobileMenu() {
     setMobileMenuOpen(false);
   }
 
+  // Function to show navigation items based on user authentication
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
@@ -50,23 +52,25 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
-      <div className="left-content">    
-        <img className="logo ml-3 mt-2" src="./images/nwg_logo.png"></img>
+      <div className="left-content">
+        <img className="logo ml-3 mt-2" src="./images/nwg_logo.png" alt="New World Gear Logo" />
       </div>
 
       <div className="mx-auto mt-1">
-          <Link to="/" className="logoName" style={{ textDecoration: 'none' }}>
-            <img src="./images/nwg.png" alt="new world gear"></img>
-          </Link>
-        </div>
+        <Link to="/" className="logoName" style={{ textDecoration: 'none' }}>
+          <img src="./images/nwg.png" alt="New World Gear" />
+        </Link>
+      </div>
 
-        <button className="hamburger-menu" onClick={toggleMobileMenu}>
-          <span className="menu-icon"></span>
-          <span className="menu-icon"></span>
-          <span className="menu-icon"></span>
-        </button>
+      {/* Hamburger menu icon */}
+      <button className="hamburger-menu" onClick={toggleMobileMenu}>
+        <span className="menu-icon"></span>
+        <span className="menu-icon"></span>
+        <span className="menu-icon"></span>
+      </button>
 
-        <nav className={`right-content ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`} onClick={closeMobileMenu}>
+      {/* Navigation menu */}
+      <nav className={`right-content ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`} onClick={closeMobileMenu}>
         {showNavigation()}
       </nav>
     </header>
