@@ -31,7 +31,7 @@ function OrderHistory() {
         {user ? (
           <>
             {/* Display user's order history */}
-            <h2>
+            <h2 style={{color: 'white', textDecoration: 'none'}}>
               Order History for {user.firstName} {user.lastName}
             </h2>
             {user.orders.map((order) => (

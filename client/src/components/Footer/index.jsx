@@ -56,6 +56,7 @@ const Footer = () => {
                   <li className="mx-auto">
                     <a href="#" className="text-white secondFont" style={{ fontSize: "18px"}}>
                       Email: cameron@robusthseq.com.au
+                      Email: info@NewWorldGear.com
                     </a>
                   </li>
                   {/* <li>
@@ -79,7 +80,7 @@ const Footer = () => {
           </section>
         </div>
   
-        <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+        <div className="text-center text-white p-3 secondFont" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
           © 2023 Copyright: New World Gear
         </div>
       </footer>

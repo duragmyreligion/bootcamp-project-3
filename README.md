@@ -1,3 +1,4 @@
+
 # bootcamp-project-3 New World Gear Tshirt Site
  
  ![MIT License](https://img.shields.io/badge/License-MIT-green)
@@ -49,5 +50,4 @@ If you have any questions regarding this project please don't contact me at [cam
 This project is licensed under the MIT License - see the [License](https://choosealicense.com/licenses/mit/) page for more details.
 
 
-          
-  
+    
