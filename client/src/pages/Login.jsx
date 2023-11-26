@@ -5,15 +5,20 @@ import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 function Login(props) {
+  // State to manage form inputs
   const [formState, setFormState] = useState({ email: '', password: '' });
+  // Mutation hook to perform login mutation
   const [login, { error }] = useMutation(LOGIN);
 
+  // Handle form submission
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Perform login mutation
       const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password },
       });
+      // Retrieve token from response and store it
       const token = mutationResponse.data.login.token;
       Auth.login(token);
     } catch (e) {
@@ -21,6 +26,7 @@ function Login(props) {
     }
   };
 
+  // Handle input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({
@@ -64,10 +70,11 @@ function Login(props) {
                 onChange={handleChange}
               />
             </div>
+            {/* Display error message if login fails */}
             {error ? (
-          <div>
-            <p className="error-text" style={{ width: '20rem'}}>The provided credentials are incorrect</p>
-          </div>
+              <div>
+                <p className="error-text" style={{ width: '20rem'}}>The provided credentials are incorrect</p>
+              </div>
             ) : null}
             <div className="mb-2 text-center submitButton">
               <button type="submit" className="btn btn-primary mt-2" style={{ marginRight: '3rem'}}>

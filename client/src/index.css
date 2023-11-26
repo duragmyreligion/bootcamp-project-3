@@ -57,7 +57,7 @@ body::before {
 
 body::after {
   content: "";
-  background-image: url("./assets/Graffiti_Background.jpg");
+  background-image: url("./assets/Graffiti_Background.webp");
   background-size: cover;
   position: fixed;
   top: 0;

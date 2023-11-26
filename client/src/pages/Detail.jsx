@@ -21,42 +21,51 @@ function Detail() {
   const { products, cart } = state;
   const [selectedSize, setSelectedSize] = useState('');
 
+  // Function to handle size change in the product detail page
   const handleSizeChange = (e) => {
     setSelectedSize(e.target.value);
   };
 
+  // Function to add the current product to the cart
   const addToCart = () => {
+    // Validation for selecting a size before adding to cart
     if (!selectedSize) {
       alert('Please select a size');
       return;
     }
 
-    const itemInCart = cart.find((cartItem) => cartItem._id === id && cartItem.selectedSize === selectedSize);
+    // Check if the item is already in the cart
+    const itemInCart = cart.find(
+      (cartItem) =>
+        cartItem._id === id && cartItem.selectedSize === selectedSize
+    );
 
     if (itemInCart) {
+      // If item exists in cart, update its quantity
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: id,
-        selectedSize: selectedSize, // Add selectedSize to identify the correct item
+        selectedSize: selectedSize,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
-      console.log('UPDATE CART Q');
       idbPromise('cart', 'put', {
         ...itemInCart,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
-      console.log('UPDATE CART Q Promise');
     } else {
+      // If item doesn't exist in cart, add it to the cart
       dispatch({
         type: ADD_TO_CART,
-        product: { ...currentProduct, purchaseQuantity: 1, selectedSize: selectedSize },
+        product: { ...currentProduct, purchaseQuantity: 1, selectedSize },
       });
-      console.log(`CURRENT: ${currentProduct}`);
-      console.log('ADD TO CART');
-      idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
+      idbPromise('cart', 'put', {
+        ...currentProduct,
+        purchaseQuantity: 1,
+      });
     }
   };
 
+  // Function to remove the current product from the cart
   const removeFromCart = () => {
     dispatch({
       type: REMOVE_FROM_CART,
@@ -65,6 +74,7 @@ function Detail() {
     idbPromise('cart', 'delete', { ...currentProduct });
   };
 
+  // Effect to handle data fetching and setting currentProduct
   useEffect(() => {
     const createSimplifiedProduct = (product) => {
       const { _id, name, description, price, quantity, image, sizes } = product;
@@ -92,7 +102,7 @@ function Detail() {
         idbPromise('products', 'put', product);
       });
       const foundProduct = data.products.find((product) => product._id === id);
-      setCurrentProduct(createSimplifiedProduct(foundProduct)); // Set currentProduct after fetching data
+      setCurrentProduct(createSimplifiedProduct(foundProduct));
     } else if (!loading) {
       idbPromise('products', 'get').then((indexedProducts) => {
         dispatch({
@@ -101,54 +111,58 @@ function Detail() {
         });
       });
       const foundProduct = indexedProducts.find((product) => product._id === id);
-      setCurrentProduct(createSimplifiedProduct(foundProduct)); // Set currentProduct from indexedProducts
+      setCurrentProduct(createSimplifiedProduct(foundProduct));
     }
   }, [products, data, loading, dispatch, id]);
 
   return (
-
     <>
       {currentProduct && cart ? (
         <div className="container my-1">
           <div className="item">
-          <Link to="/" className="productLink">← Back to Products</Link>
+            <Link to="/" className="productLink">
+              ← Back to Products
+            </Link>
+            {/* Product details */}
             <h2 className='mt-5'>{currentProduct.name}</h2>
             <p>{currentProduct.description}</p>
             <p className='secondFont'>
               <strong>Price:</strong>${currentProduct.price}{' '}
-            
-            <select value={selectedSize} onChange={handleSizeChange}>
-              <option value="">Select size</option>
-              {currentProduct.sizes && currentProduct.sizes.length > 0 ? (
-              currentProduct.sizes.map((size) => (
-              <option key={size} value={size}>
-              {size}
-              </option>
-              ))
-              ) : (
-              <option value="" disabled>Loading sizes...</option>
-              )}
-            </select>
-
-            <button style={{ fontWeight: 'bold' }} onClick={addToCart}>Add to Cart</button>
-            <button
-              style={{ fontWeight: 'bold' }}
-              disabled={!cart.find((p) => p._id === currentProduct._id)}
-              onClick={removeFromCart}
-            >
-              Remove from Cart
-            </button>
-          </p>
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+              {/* Select size dropdown */}
+              <select value={selectedSize} onChange={handleSizeChange}>
+                <option value="">Select size</option>
+                {currentProduct.sizes && currentProduct.sizes.length > 0 ? (
+                  currentProduct.sizes.map((size) => (
+                    <option key={size} value={size}>
+                      {size}
+                    </option>
+                  ))
+                ) : (
+                  <option value="" disabled>Loading sizes...</option>
+                )}
+              </select>
+              {/* Add to cart and remove from cart buttons */}
+              <button style={{ fontWeight: 'bold' }} onClick={addToCart}>
+                Add to Cart
+              </button>
+              <button
+                style={{ fontWeight: 'bold' }}
+                disabled={!cart.find((p) => p._id === currentProduct._id)}
+                onClick={removeFromCart}
+              >
+                Remove from Cart
+              </button>
+            </p>
+            <img src={`/images/${currentProduct.image}`} alt={currentProduct.name} />
           </div>
         </div>
       ) : null}
+      {/* Loading spinner */}
       {loading ? <img src={spinner} alt="loading" /> : null}
+      {/* Cart component */}
       <Cart />
     </>
   );
 }
+
 export default Detail;

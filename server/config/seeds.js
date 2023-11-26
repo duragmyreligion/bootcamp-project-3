@@ -1,12 +1,15 @@
-const db = require('./connection');
-const { User, Product, Category } = require('../models');
-const cleanDB = require('./cleanDB');
+const db = require('./connection');// Importing database connection
+const { User, Product, Category } = require('../models');// Importing necessary models
+const cleanDB = require('./cleanDB');// Importing function to clean the database
 
+// Event listener for the database connection 'open' event
 db.once('open', async () => {
+  // Cleaning up existing data in the collections
   await cleanDB('Category', 'categories');
   await cleanDB('Product', 'products');
   await cleanDB('User', 'users');
 
+  // Inserting multiple categories into the database {not used atm}
   const categories = await Category.insertMany([
     { name: 'Food' },
     { name: 'Household Supplies' },
@@ -15,15 +18,16 @@ db.once('open', async () => {
     { name: 'Toys' }
   ]);
 
-  console.log('categories seeded');
+  console.log('categories seeded');// Logging confirmation of category seeding
 
+  // Inserting multiple products into the database
   const products = await Product.insertMany([
     {
       name: 'Self Portrait',
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       description:
         'A slef portrait of Cam back in his metal days as his mates used to say he looked',
-      image: 'dc12-dg.png',
+      image: 'dc12-dg.webp',
       category: categories[0]._id,
       price: 45.00,
       quantity: 500
@@ -33,7 +37,7 @@ db.once('open', async () => {
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       description:
         'If you want to look inside my mind then do so and then maybe leave me alone',
-      image: 'd3-dg.png',
+      image: 'd3-dg.webp',
       category: categories[0]._id,
       price: 45.00,
       quantity: 500
@@ -44,7 +48,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Surf the 120 like its 1999',
-      image: 'dc2-dg.png',
+      image: 'dc2-dg.webp',
       price: 45.00,
       quantity: 20
     },
@@ -54,7 +58,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Our little friend here is trying to reboot the 80s back to a time when number 5 is alive',
-      image: 'dc8-dg-v2.png',
+      image: 'dc8-dg-v2.webp',
       price: 45.00,
       quantity: 50
     },
@@ -64,7 +68,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Mechanically traversing the realms where everything and everyone is manufractured',
-      image: 'd1-dg-v2.png',
+      image: 'd1-dg-v2.webp',
       price: 45.00,
       quantity: 100
     },
@@ -74,7 +78,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Why not just offend everyone you can a give them a taste of the red and green frog',
-      image: 'dc6-dg.png',
+      image: 'dc6-dg.webp',
       price: 45.00,
       quantity: 30
     },
@@ -84,7 +88,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Originally used a a physcadelic drug testing army mule of the CIA in the 1960s, out mate here still hasnt slept and is getting so twisted out hes not sure where he is anymore',
-      image: 'dc14-dg.png',
+      image: 'dc14-dg.webp',
       price: 45.00,
       quantity: 30
     },
@@ -94,7 +98,7 @@ db.once('open', async () => {
       category: categories[3]._id,
       description:
         'After coming down to earth and meeting our leaders, crazed alien thinks it best if he just leaves.',
-      image: 'dc15-dg.png',
+      image: 'dc15-dg.webp',
       price: 45.00,
       quantity: 100
     },
@@ -103,7 +107,7 @@ db.once('open', async () => {
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description: 'Send a special message to all those f$%wits you come across without mutting a single word, great for parties you didnt want to go to',
-      image: 'dc4-dg.png',
+      image: 'dc4-dg.webp',
       price: 45.00,
       quantity: 1000
     },
@@ -113,7 +117,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'You must always follow the ways of the master, as such, you must get more chilli in you every day.',
-      image: 'dc1-dg.png',
+      image: 'dc1-dg.webp',
       price: 45.00,
       quantity: 1000
     },
@@ -123,7 +127,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'Maddog has had a tough year and hes ready to stare down and wanna be ganster try hards',
-      image: 'dc11-dg.png',
+      image: 'dc11-dg.webp',
       price: 45.00,
       quantity: 100
     },
@@ -133,7 +137,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'Christina says Cam is a fish and it looks like hes still stuck in the matrix with agent swimth',
-      image: 'd5-dg.png',
+      image: 'd5-dg.webp',
       price: 45.00,
       quantity: 600
     },
@@ -142,7 +146,7 @@ db.once('open', async () => {
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description: 'Pete is still reliving his days as a rock god of the 90s but his construction job KPIs are holding him firmly back',
-      image: 'dc9-dg.png',
+      image: 'dc9-dg.webp',
       price: 45.00,
       quantity: 1000
     },
@@ -152,7 +156,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
       'This beuatifully crafted masterpeice is simple yet elegent and ready for any occasion',
-      image: 'd4-dg-v2.png',
+      image: 'd4-dg-v2.webp',
       price: 45.00,
       quantity: 1000
     },
@@ -162,7 +166,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
       'Young mate here is so rekt he cant see but he will still try and consume everything in sight.',
-      image: 'dc4-dg-vr2.png',
+      image: 'dc4-dg-vr2.webp',
       price: 45.00,
       quantity: 100
     },
@@ -172,7 +176,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
       'Dont mix bad mushies with DMT or youll end up like the mushroom killer mum or be paid a visit by this demon.',
-      image: 'dc10-dg.png',
+      image: 'dc10-dg.webp',
       price: 45.00,
       quantity: 600
     },
@@ -181,7 +185,7 @@ db.once('open', async () => {
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description: 'just chilling wondering where the rest of my mind is',
-      image: 'd2-dg.png',
+      image: 'd2-dg.webp',
       price: 45.00,
       quantity: 1000
     },
@@ -191,7 +195,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'we are just sooooooo please to eat, i mean meet you',
-      image: 'dc5-dg.png',
+      image: 'dc5-dg.webp',
       price: 45.00,
       quantity: 1000
     },
@@ -201,7 +205,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'When you want to be offensive but just not that offensive',
-      image: 'dc6-dg-vg2.png',
+      image: 'dc6-dg-vg2.webp',
       price: 45.00,
       quantity: 100
     },
@@ -211,7 +215,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'Cocaine Claude is just really not coming back to us for a while it looks, might stay away for a bit',
-      image: 'dc7-dg-vr2.png',
+      image: 'dc7-dg-vr2.webp',
       price: 45.00,
       quantity: 600
     },
@@ -220,7 +224,7 @@ db.once('open', async () => {
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       category: categories[4]._id,
       description: 'When you want to inslult your weed stealing mates but in a more subtle way.',
-      image: 'dc4-dg-r.png',
+      image: 'dc4-dg-r.webp',
       price: 45.00,
       quantity: 1000
     },
@@ -230,7 +234,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'Old mate is starting to slip out of this deimsion and looks like hes fading away',
-      image: 'dc14-dg-v2.png',
+      image: 'dc14-dg-v2.webp',
       price: 45.00,
       quantity: 1000
     },
@@ -240,7 +244,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'Rabbits here... just watching..... wondring whats wrong wity you',
-      image: 'd6-dg.png',
+      image: 'd6-dg.webp',
       price: 45.00,
       quantity: 100
     },
@@ -250,12 +254,13 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'Look hes still here being a fwit but you know hes not sticking right out',
-      image: 'dc4-dg-l.png',
+      image: 'dc4-dg-l.webp',
       price: 45.00,
       quantity: 600
     }
   ]);
 
+  // Logging confirmation of product seeding
   console.log('products seeded');
 
   await User.create({
@@ -270,6 +275,7 @@ db.once('open', async () => {
     ]
   });
 
+   // Creating users and associating orders with specific products
   await User.create({
     firstName: 'Elijah',
     lastName: 'Holt',
@@ -291,7 +297,9 @@ db.once('open', async () => {
     password: 'Password1!_'
   });
 
+  // Logging confirmation of user seeding
   console.log('users seeded');
 
+  // Exiting the process after seeding data
   process.exit();
 });
